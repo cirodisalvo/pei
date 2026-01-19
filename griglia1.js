@@ -115,6 +115,28 @@ const griglia1 = {
             "Scarsa empatia, centrato su di sé",
             "Non mostra segnali di riconoscimento emotivo altrui"
           ]
+        },
+        {
+          "domanda": "Atteggiamento verso la diversità",
+          "opzioni": [
+            "Valorizza attivamente le differenze, inclusivo",
+            "Rispetta le diversità senza pregiudizi",
+            "Indifferente alle caratteristiche altrui",
+            "Mostra preferenze basate su somiglianze",
+            "Esprime giudizi o stereotipi",
+            "Esclude attivamente compagni diversi"
+          ]
+        },
+        {
+          "domanda": "Comportamenti pro-sociali spontanei",
+          "opzioni": [
+            "Aiuta spontaneamente, consola, include senza essere sollecitato",
+            "Mostra generosità e supporto quando richiesto",
+            "Occasionalmente offre aiuto in situazioni evidenti",
+            "Raramente si offre di aiutare gli altri",
+            "Aiuta solo se c'è un vantaggio personale",
+            "Mai comportamenti pro-sociali"
+          ]
         }
       ]
     },
@@ -142,6 +164,17 @@ const griglia1 = {
             "Postura chiusa, poco contatto visivo",
             "Segnali di chiusura e disagio evidenti",
             "Comunicazione non verbale problematica"
+          ]
+        },
+        {
+          "domanda": "Comprensione della comunicazione non verbale altrui",
+          "opzioni": [
+            "Interpreta correttamente espressioni, toni e gesti altrui",
+            "Coglie i segnali non verbali principali",
+            "Fatica a interpretare segnali non verbali complessi",
+            "Interpreta in modo letterale o errato",
+            "Non presta attenzione ai segnali non verbali",
+            "Totalmente insensibile alla comunicazione non verbale altrui"
           ]
         },
         {
@@ -208,7 +241,7 @@ const griglia1 = {
         {
           "domanda": "Capacità di cooperazione",
           "opzioni": [
-            "Coopera efficacemente, coordina il grupo",
+            "Coopera efficacemente, coordina il gruppo",
             "Coopera bene, contribuisce attivamente",
             "Coopera se guidato",
             "Coopera con difficoltà",
@@ -244,7 +277,9 @@ const griglia1 = {
             "Condivide spontaneamente, cura materiali comuni",
             "Condivide volentieri se richiesto",
             "Condivide solo con mediazione docente",
-            "Forte disagio se altri toccano i suoi oggetti"
+            "Forte disagio se altri toccano i suoi oggetti",
+            "Rifiuta attivamente di condividere",
+            "Sottrae o danneggia materiali altrui"
           ]
         },
         {
@@ -256,6 +291,28 @@ const griglia1 = {
             "Si occupa solo della propria parte",
             "Impone visione, non accetta compromessi",
             "Rifiuta compiti o sabota il lavoro di gruppo"
+          ]
+        },
+        {
+          "domanda": "Gestione della competitività",
+          "opzioni": [
+            "Vive la competizione in modo costruttivo e leale",
+            "Accetta la sconfitta con sportività",
+            "Si demotiva facilmente se perde",
+            "Diventa aggressivo o sleale se in competizione",
+            "Rifiuta qualsiasi situazione competitiva",
+            "Sminuisce gli altri per primeggiare"
+          ]
+        },
+        {
+          "domanda": "Flessibilità nel cambiamento di ruolo",
+          "opzioni": [
+            "Si adatta facilmente a ruoli diversi in base alle esigenze",
+            "Accetta cambi di ruolo senza difficoltà",
+            "Preferisce ruoli consolidati ma si adatta",
+            "Resiste ai cambi di ruolo",
+            "Si blocca se il ruolo cambia improvvisamente",
+            "Rifiuta attivamente ruoli diversi da quello abituale"
           ]
         }
       ]
@@ -295,6 +352,28 @@ const griglia1 = {
             "Rispettoso solo verso alcuni",
             "Poco rispettoso, atteggiamenti scorretti",
             "Irrispettoso, comportamenti inadeguati"
+          ]
+        },
+        {
+          "domanda": "Rispetto dei confini personali altrui",
+          "opzioni": [
+            "Rispetta sempre lo spazio fisico ed emotivo altrui",
+            "Riconosce e rispetta i confini se esplicitati",
+            "A volte invade lo spazio altrui senza rendersene conto",
+            "Fatica a rispettare i confini fisici",
+            "Ignora i segnali di disagio altrui",
+            "Violazione consapevole dei confini"
+          ]
+        },
+        {
+          "domanda": "Comprensione delle norme sociali non esplicite",
+          "opzioni": [
+            "Coglie e applica norme implicite (es. turni informali, toni)",
+            "Riconosce le norme implicite con qualche indicazione",
+            "Fatica a generalizzare norme da un contesto all'altro",
+            "Ha bisogno di spiegazioni esplicite per ogni situazione",
+            "Ignora le norme implicite anche se segnalate",
+            "Comportamento socialmente inadeguato per mancata comprensione"
           ]
         }
       ]
@@ -368,6 +447,17 @@ const griglia1 = {
             "Fatica a esprimere emozioni",
             "Esprime emozioni in modo inadeguato o eccessivo",
             "Non esprime emozioni o le esprime in modo problematico"
+          ]
+        },
+        {
+          "domanda": "Regolazione emotiva in contesti di gruppo",
+          "opzioni": [
+            "Mantiene la calma anche sotto pressione del gruppo",
+            "Si autoregola con strategie adattive",
+            "Necessita di supporto esterno per regolarsi",
+            "Si lascia trascinare dalle emozioni del gruppo",
+            "Reagisce in modo sproporzionato in gruppo",
+            "Si blocca o si isola emotivamente"
           ]
         },
         {
@@ -501,34 +591,77 @@ const griglia1 = {
       ]
     },
     {
-      "nome": "VARIABILI AMBIENTALI E CONTESTUALI",
-      "descrizione": "Analizza come il comportamento sociale dell'alunno sia influenzato dal tipo di contesto (strutturato/non strutturato, interno/esterno) e da stimoli sensoriali o fisici specifici.",
-      "sezioni": [
-        {
-          "domanda": "Comportamento in base al setting",
-          "opzioni": [
-            "Rispetta confini e aspettative del setting strutturato",
-            "Calo autocontrollo in contesti non strutturati",
-            "Flessibile in uscite didattiche, gestisce cambiamenti",
-            "Ansia o rigidità ai cambiamenti imprevisti",
-            "Timidezza inibitoria con estranei",
-            "Esibizionismo con estranei",
-            "Adatta comportamento fluidamente ai contesti"
-          ]
-        },
-        {
-          "domanda": "Risposta a stimoli sensoriali e fisici",
-          "opzioni": [
-            "Tollera brusio, mantiene concentrazione",
-            "Sovraccarico sensoriale con rumore/movimento",
-            "Accetta contatto fisico naturalmente",
-            "Cerca contatto fisico in modo invasivo",
-            "Evita contatto fisico, fastidio se toccato",
-            "Sensibile a stimoli ambientali (luci, odori, temperatura)"
-          ]
-        }
+  "nome": "VARIABILI AMBIENTALI E CONTESTUALI",
+  "descrizione": "Analizza come il comportamento sociale dell'alunno sia influenzato dal tipo di contesto (strutturato/non strutturato, interno/esterno) e da stimoli sensoriali o fisici specifici.",
+  "sezioni": [
+    {
+      "domanda": "Comportamento in base al setting",
+      "opzioni": [
+        "Rispetta confini e aspettative del setting strutturato",
+        "Calo autocontrollo in contesti non strutturati",
+        "Flessibile in uscite didattiche, gestisce cambiamenti",
+        "Ansia o rigidità ai cambiamenti imprevisti",
+        "Timidezza inibitoria con estranei",
+        "Esibizionismo con estranei"
       ]
     },
+    {
+      "domanda": "Risposta a stimoli sensoriali e fisici",
+      "opzioni": [
+        "Tollera brusio, mantiene concentrazione",
+        "Sovraccarico sensoriale con rumore/movimento",
+        "Accetta contatto fisico naturalmente",
+        "Cerca contatto fisico in modo invasivo",
+        "Evita contatto fisico, fastidio se toccato",
+        "Sensibile a stimoli ambientali (luci, odori, temperatura)"
+      ]
+    },
+    {
+      "domanda": "Reazione a cambiamenti di routine o imprevisti",
+      "opzioni": [
+        "Mantiene la calma e si adatta facilmente",
+        "Mostra lieve disagio ma si riprende rapidamente",
+        "Necessita di rassicurazione per adattarsi",
+        "Diventa ansioso o irritabile",
+        "Reagisce con opposizione o rifiuto",
+        "Crisi comportamentali o emotive"
+      ]
+    },
+    {
+      "domanda": "Comportamento in base al tipo di attività",
+      "opzioni": [
+        "Coerente in tutti i tipi di attività",
+        "Maggiormente a proprio agio in attività strutturate",
+        "Più partecipativo in attività creative o motorie",
+        "Solo in attività di suo interesse",
+        "Disimpegno in attività accademiche",
+        "Comportamento molto variabile senza pattern chiaro"
+      ]
+    },
+    {
+      "domanda": "Influenza della presenza di figure adulte di riferimento",
+      "opzioni": [
+        "Comportamento coerente indipendentemente dalla presenza adulta",
+        "Più autonomo in presenza di adulti noti",
+        "Cerca conferma in presenza di adulti nuovi",
+        "Aumento comportamenti problema in assenza di adulti noti",
+        "Miglior comportamento con adulti sostituti",
+        "Comportamento significativamente diverso con adulti diversi"
+      ]
+    },
+    {
+      "domanda": "Adattamento a cambiamenti di orario o programma",
+      "opzioni": [
+        "Flessibile, accetta cambiamenti senza difficoltà",
+        "Accetta se preparato/preavvisato",
+        "Mostra disagio ma si adegua con supporto",
+        "Richieste ripetute di conferma sul nuovo programma",
+        "Opposizione verbale ai cambiamenti",
+        "Reazioni emotive intense a variazioni di routine"
+      ]
+    }
+  ]
+},
     {
       "nome": "ELEMENTI DI OSSERVAZIONE SPECIFICA",
       "descrizione": "Raccoglie informazioni specifiche sulle preferenze relazionali, i contesti di maggior benessere, i bisogni educativi emersi e l'evoluzione osservata nel tempo.",
@@ -575,6 +708,17 @@ const griglia1 = {
             "Situazione stabile con criticità",
             "Peggioramento graduale",
             "Situazione critica in peggioramento"
+          ]
+        },
+        {
+          "domanda": "Strategie di supporto già sperimentate",
+          "opzioni": [
+            "Nessuna necessità di strategie specifiche",
+            "Circle time, tutoring tra pari efficaci",
+            "Role-playing, storie sociali utili",
+            "Rinforzo positivo, contratto comportamentale",
+            "Mediazione adulta costante necessaria",
+            "Nessuna strategia si è rivelata efficace"
           ]
         }
       ]
