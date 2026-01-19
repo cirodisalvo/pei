@@ -69,18 +69,22 @@
             <button onclick="initApp(griglia1, 'g1')" class="card p-8 rounded-3xl hover:border-slate-400 transition-all group">
                 <span class="text-blue-600 font-bold text-xs block mb-2 uppercase tracking-[0.2em]">Dimensione 1</span>
                 <h2 class="text-xl font-bold group-hover:text-blue-600 transition-colors">Relazione e Socializzazione</h2>
+                <p class="mt-3 text-slate-500 text-sm leading-relaxed">Osservazione delle interazioni sociali, capacità di stabilire e mantenere relazioni, partecipazione ai gruppi e gestione delle emozioni.</p>
             </button>
             <button onclick="initApp(griglia2, 'g2')" class="card p-8 rounded-3xl hover:border-slate-400 transition-all group">
                 <span class="text-emerald-600 font-bold text-xs block mb-2 uppercase tracking-[0.2em]">Dimensione 2</span>
                 <h2 class="text-xl font-bold group-hover:text-emerald-600 transition-colors">Comunicazione e Linguaggio</h2>
+                <p class="mt-3 text-slate-500 text-sm leading-relaxed">Valutazione della comprensione ed espressione verbale e non verbale, uso del linguaggio in contesti diversi e comunicazione funzionale.</p>
             </button>
             <button onclick="initApp(griglia3, 'g3')" class="card p-8 rounded-3xl hover:border-slate-400 transition-all group">
                 <span class="text-amber-600 font-bold text-xs block mb-2 uppercase tracking-[0.2em]">Dimensione 3</span>
                 <h2 class="text-xl font-bold group-hover:text-amber-600 transition-colors">Autonomia e Orientamento</h2>
+                <p class="mt-3 text-slate-500 text-sm leading-relaxed">Abilità di autonomia personale, orientamento spazio-temporale, uso di strumenti e tecnologie e gestione delle attività quotidiane.</p>
             </button>
             <button onclick="initApp(griglia4, 'g4')" class="card p-8 rounded-3xl hover:border-slate-400 transition-all group">
                 <span class="text-rose-600 font-bold text-xs block mb-2 uppercase tracking-[0.2em]">Dimensione 4</span>
                 <h2 class="text-xl font-bold group-hover:text-rose-600 transition-colors">Cognitiva e Apprendimento</h2>
+                <p class="mt-3 text-slate-500 text-sm leading-relaxed">Valutazione delle abilità cognitive, strategie di apprendimento, risoluzione di problemi e capacità di generalizzare le competenze.</p>
             </button>
         </div>
     </div>
@@ -155,7 +159,15 @@
             container.innerHTML = '';
             activeData.categorie.forEach((cat, cIdx) => {
                 let html = `<div>
-                    <h3 class="text-slate-500 font-bold text-sm uppercase tracking-widest mb-6 border-b-2 border-slate-200 pb-2">${cat.nome}</h3>`;
+                    <h3 class="text-slate-500 font-bold text-sm uppercase tracking-widest mb-2 border-b-2 border-slate-200 pb-2">${cat.nome}</h3>`;
+                
+                // AGGIUNTA: Mostra la descrizione della categoria se presente
+                if (cat.descrizione) {
+                    html += `<p class="text-slate-500 text-sm mb-6 leading-relaxed">${cat.descrizione}</p>`;
+                } else {
+                    html += `<div class="mb-6"></div>`;
+                }
+                
                 cat.sezioni.forEach((sec, sIdx) => {
                     html += `<div class="mb-10">
                         <p class="font-bold text-xl mb-5 leading-tight text-slate-900">${sec.domanda}</p>
@@ -286,6 +298,15 @@
                 doc.text(cat.nome, 10, y);
                 y += 8;
 
+                // AGGIUNTA: Stampa la descrizione della categoria nel PDF
+                if (cat.descrizione) {
+                    doc.setFont("helvetica", "normal");
+                    doc.setFontSize(9);
+                    const descLines = doc.splitTextToSize(cat.descrizione, 180);
+                    doc.text(descLines, 10, y);
+                    y += (descLines.length * 5) + 3;
+                }
+
                 cat.sezioni.forEach((sec, sIdx) => {
                     const selected = Array.from(document.querySelectorAll(`input[name="q_${cIdx}_${sIdx}"]:checked`)).map(e => e.value);
                     if(selected.length > 0) {
@@ -323,7 +344,15 @@
                     y += (nLines.length * 6) + 6;
                 }
             });
-            doc.save(`Osservazione_PEI.pdf`);
+            
+            // MODIFICA: Usa il titolo della griglia per il nome del file PDF con data e ora
+            const now = new Date();
+            const dateStr = now.toISOString().slice(0, 10); // YYYY-MM-DD
+            const timeStr = now.toTimeString().slice(0, 8).replace(/:/g, '-'); // HH-MM-SS
+            
+            const sanitizedTitle = activeData.titolo.replace(/[^\w\s]/gi, '_').replace(/\s+/g, '_');
+            const fileName = `${sanitizedTitle}_${dateStr}_${timeStr}.pdf`;
+            doc.save(fileName);
         }
     </script>
 </body>
