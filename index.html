@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Griglie di Osservazione PEI - Gestione File</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="griglia1.js"></script>
+    <script src="griglia2.js"></script>
+    <script src="griglia3.js"></script>
+    <script src="griglia4.js"></script>
+
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #f1f5f9; 
+            color: #0f172a; 
+        }
+        .glass-header {
+            background: rgba(241, 245, 249, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 2px solid #e2e8f0;
+        }
+        .card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .input-dark {
+            background-color: #f8fafc;
+            border: 2px solid #cbd5e1;
+            color: #0f172a;
+        }
+        .input-dark:focus {
+            border-color: #475569;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="selector-screen" class="min-h-screen flex flex-col items-center justify-center p-6 text-center">
+        
+        <div class="max-w-2xl mb-10 p-4 bg-emerald-50 border border-emerald-200 rounded-2xl flex items-start gap-4 text-left">
+            <div class="text-emerald-600 mt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+            </div>
+            <div>
+                <h4 class="text-emerald-900 font-bold text-sm uppercase tracking-tight">Portabilità dei Dati</h4>
+                <p class="text-emerald-700 text-xs leading-relaxed mt-1">
+                    Puoi salvare il tuo lavoro in un file <strong>.json</strong> sul tuo PC e ricaricarlo in qualsiasi momento. Nessun dato viene salvato su server esterni: la tua privacy è garantita.
+                </p>
+            </div>
+        </div>
+
+        <h1 class="text-4xl font-extrabold mb-4 tracking-tight">
+            Griglie di osservazione per le <br>
+            <span class="text-slate-600">quattro dimensioni del PEI</span>
+        </h1>
+        <p class="mb-12 text-slate-500 font-medium">Strumento professionale per la redazione del Piano Educativo Individualizzato</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl text-left">
+            <button onclick="initApp(griglia1, 'g1')" class="card p-8 rounded-3xl hover:border-slate-400 transition-all group">
+                <span class="text-blue-600 font-bold text-xs block mb-2 uppercase tracking-[0.2em]">Dimensione 1</span>
+                <h2 class="text-xl font-bold group-hover:text-blue-600 transition-colors">Relazione e Socializzazione</h2>
+                <p class="mt-3 text-slate-500 text-sm leading-relaxed">Osservazione delle interazioni sociali, capacità di stabilire e mantenere relazioni, partecipazione ai gruppi e gestione delle emozioni.</p>
+            </button>
+            <button onclick="initApp(griglia2, 'g2')" class="card p-8 rounded-3xl hover:border-slate-400 transition-all group">
+                <span class="text-emerald-600 font-bold text-xs block mb-2 uppercase tracking-[0.2em]">Dimensione 2</span>
+                <h2 class="text-xl font-bold group-hover:text-emerald-600 transition-colors">Comunicazione e Linguaggio</h2>
+                <p class="mt-3 text-slate-500 text-sm leading-relaxed">Valutazione della comprensione ed espressione verbale e non verbale, uso del linguaggio in contesti diversi e comunicazione funzionale.</p>
+            </button>
+            <button onclick="initApp(griglia3, 'g3')" class="card p-8 rounded-3xl hover:border-slate-400 transition-all group">
+                <span class="text-amber-600 font-bold text-xs block mb-2 uppercase tracking-[0.2em]">Dimensione 3</span>
+                <h2 class="text-xl font-bold group-hover:text-amber-600 transition-colors">Autonomia e Orientamento</h2>
+                <p class="mt-3 text-slate-500 text-sm leading-relaxed">Abilità di autonomia personale, orientamento spazio-temporale, uso di strumenti e tecnologie e gestione delle attività quotidiane.</p>
+            </button>
+            <button onclick="initApp(griglia4, 'g4')" class="card p-8 rounded-3xl hover:border-slate-400 transition-all group">
+                <span class="text-rose-600 font-bold text-xs block mb-2 uppercase tracking-[0.2em]">Dimensione 4</span>
+                <h2 class="text-xl font-bold group-hover:text-rose-600 transition-colors">Cognitiva e Apprendimento</h2>
+                <p class="mt-3 text-slate-500 text-sm leading-relaxed">Valutazione delle abilità cognitive, strategie di apprendimento, risoluzione di problemi e capacità di generalizzare le competenze.</p>
+            </button>
+        </div>
+    </div>
+
+    <div id="app-content" class="hidden">
+        <header class="sticky top-0 z-50 glass-header px-4 py-4">
+            <div class="max-w-5xl mx-auto flex flex-wrap justify-between items-center gap-4">
+                <button onclick="window.location.reload()" class="font-bold text-slate-600 hover:text-black flex items-center gap-2 text-sm uppercase">
+                    ⬅ MENU
+                </button>
+                
+                <div class="flex gap-2">
+                    <button onclick="document.getElementById('upload-json').click()" class="bg-white border-2 border-slate-300 text-slate-700 px-4 py-2 rounded-xl font-bold hover:bg-slate-50 transition-all text-xs uppercase">
+                        Carica Progetto
+                    </button>
+                    <input type="file" id="upload-json" class="hidden" accept=".json" onchange="importFromJson(event)">
+
+                    <button onclick="exportToJson()" class="bg-blue-600 text-white px-4 py-2 rounded-xl font-bold shadow-md hover:bg-blue-700 transition-all text-xs uppercase">
+                        Salva Progetto
+                    </button>
+
+                    <button onclick="exportToPdf()" class="bg-slate-900 text-white px-4 py-2 rounded-xl font-bold shadow-md hover:bg-black transition-all text-xs uppercase">
+                        Esporta PDF
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="max-w-3xl mx-auto px-6 py-12">
+            <h2 id="grid-title" class="text-3xl font-extrabold mb-12 text-center uppercase tracking-tight text-slate-900"></h2>
+
+            <div class="card p-8 rounded-3xl mb-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase mb-2 tracking-widest">Periodo dal</label>
+                        <input type="date" id="date-from" oninput="saveData()" class="w-full input-dark rounded-xl p-4 font-bold">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase mb-2 tracking-widest">Al</label>
+                        <input type="date" id="date-to" oninput="saveData()" class="w-full input-dark rounded-xl p-4 font-bold">
+                    </div>
+                </div>
+            </div>
+
+            <div id="categories-container" class="space-y-16"></div>
+
+            <div class="mt-20 space-y-8">
+                <h3 class="text-2xl font-black border-l-8 border-slate-900 pl-4 uppercase tracking-tighter">OSSERVAZIONI FINALI</h3>
+                <div id="observations-container" class="space-y-6"></div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        let activeData = null;
+        let currentID = "";
+
+        function initApp(data, id) {
+            activeData = data;
+            currentID = id;
+            document.getElementById('selector-screen').classList.add('hidden');
+            document.getElementById('app-content').classList.remove('hidden');
+            document.getElementById('grid-title').innerText = data.titolo;
+            renderGrid();
+            renderObservations();
+            loadSavedData();
+            window.scrollTo(0,0);
+        }
+
+        function renderGrid() {
+            const container = document.getElementById('categories-container');
+            container.innerHTML = '';
+            activeData.categorie.forEach((cat, cIdx) => {
+                let html = `<div>
+                    <h3 class="text-slate-500 font-bold text-sm uppercase tracking-widest mb-2 border-b-2 border-slate-200 pb-2">${cat.nome}</h3>`;
+                
+                // AGGIUNTA: Mostra la descrizione della categoria se presente
+                if (cat.descrizione) {
+                    html += `<p class="text-slate-500 text-sm mb-6 leading-relaxed">${cat.descrizione}</p>`;
+                } else {
+                    html += `<div class="mb-6"></div>`;
+                }
+                
+                cat.sezioni.forEach((sec, sIdx) => {
+                    html += `<div class="mb-10">
+                        <p class="font-bold text-xl mb-5 leading-tight text-slate-900">${sec.domanda}</p>
+                        <div class="grid grid-cols-1 gap-3">`;
+                    sec.opzioni.forEach((opt, oIdx) => {
+                        const uniqueId = `check_${currentID}_${cIdx}_${sIdx}_${oIdx}`;
+                        html += `
+                            <label class="card flex items-center gap-4 p-5 rounded-2xl cursor-pointer hover:bg-slate-50 transition-all">
+                                <input type="checkbox" id="${uniqueId}" onchange="saveData()" name="q_${cIdx}_${sIdx}" value="${opt}" class="h-6 w-6 accent-slate-900">
+                                <span class="text-slate-800 font-medium">${opt}</span>
+                            </label>`;
+                    });
+                    html += `</div></div>`;
+                });
+                html += `</div>`;
+                container.innerHTML += html;
+            });
+        }
+
+        function renderObservations() {
+            const obsContainer = document.getElementById('observations-container');
+            obsContainer.innerHTML = '';
+            activeData.osservazioni.forEach((label, idx) => {
+                obsContainer.innerHTML += `
+                    <div class="card p-8 rounded-3xl text-slate-900">
+                        <label class="block font-bold text-slate-500 text-xs uppercase mb-4 tracking-widest">${label}</label>
+                        <textarea id="obs_text_${currentID}_${idx}" oninput="saveData()" class="w-full bg-slate-50 border-2 border-slate-200 rounded-xl p-4 text-slate-900 outline-none focus:border-slate-900 transition-all" rows="4"></textarea>
+                    </div>`;
+            });
+        }
+
+        // --- GESTIONE DATI (LOCAL STORAGE) ---
+        function saveData() {
+            const dataToSave = gatherCurrentData();
+            localStorage.setItem('pei_pro_v5_' + currentID, JSON.stringify(dataToSave));
+        }
+
+        function loadSavedData() {
+            const saved = localStorage.getItem('pei_pro_v5_' + currentID);
+            if(saved) fillForm(JSON.parse(saved));
+        }
+
+        // --- GESTIONE FILE (JSON) ---
+        function gatherCurrentData() {
+            const data = {
+                gridID: currentID,
+                dateFrom: document.getElementById('date-from').value,
+                dateTo: document.getElementById('date-to').value,
+                notes: {},
+                checks: {}
+            };
+            document.querySelectorAll('input[type="checkbox"]:checked').forEach(cb => data.checks[cb.id] = true);
+            document.querySelectorAll('textarea').forEach(tx => data.notes[tx.id] = tx.value);
+            return data;
+        }
+
+        function fillForm(data) {
+            if(!data) return;
+            document.getElementById('date-from').value = data.dateFrom || "";
+            document.getElementById('date-to').value = data.dateTo || "";
+            
+            // Reset dei checkbox prima del caricamento
+            document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+            
+            for(let id in data.checks) {
+                const el = document.getElementById(id);
+                if(el) el.checked = true;
+            }
+            for(let id in data.notes) {
+                const el = document.getElementById(id);
+                if(el) el.value = data.notes[id];
+            }
+        }
+
+function exportToJson() {
+    const data = gatherCurrentData();
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    
+    // Creiamo un nome file più descrittivo
+    const now = new Date();
+    const dateStr = now.toISOString().slice(0, 10); // YYYY-MM-DD
+    const timeStr = now.toTimeString().slice(0, 8).replace(/:/g, '-'); // HH-MM-SS
+    // Prendiamo il titolo della griglia, rimuoviamo i caratteri non adatti per un nome file
+    const sanitizedTitle = activeData.titolo.replace(/[^\w\s]/gi, '_').replace(/\s+/g, '_');
+    // Componiamo il nome del file: TitoloGriglia_data_ora.json
+    const fileName = `${sanitizedTitle}_${dateStr}_${timeStr}.json`;
+    
+    a.download = fileName;
+    a.click();
+    URL.revokeObjectURL(url);
+}
+
+        function importFromJson(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    if(data.gridID !== currentID) {
+                        if(!confirm("Attenzione: i dati sembrano appartenere a una dimensione diversa. Caricare comunque?")) return;
+                    }
+                    fillForm(data);
+                    saveData(); // Aggiorna anche il localStorage
+                    alert("Dati importati correttamente!");
+                } catch (err) {
+                    alert("Errore nel caricamento del file JSON.");
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        // --- ESPORTAZIONE PDF ---
+        function exportToPdf() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const period = `Periodo di osservazione: dal ${document.getElementById('date-from').value || '___'} al ${document.getElementById('date-to').value || '___'}`;
+            
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(14);
+            const titleLines = doc.splitTextToSize(activeData.titolo, 180);
+            doc.text(titleLines, 10, 20);
+            let y = 20 + (titleLines.length * 7); 
+            
+            doc.setFontSize(11);
+            doc.text("Alunno: _________________________________________________  Classe: _________", 10, y);
+            y += 8;
+            doc.text(period, 10, y);
+            y += 4; doc.line(10, y, 200, y); y += 10;
+
+            activeData.categorie.forEach((cat, cIdx) => {
+                if (y > 270) { doc.addPage(); y = 20; }
+                doc.setFont("helvetica", "bold"); doc.setFontSize(12);
+                doc.setTextColor(80);
+                doc.text(cat.nome, 10, y);
+                y += 8;
+
+                // AGGIUNTA: Stampa la descrizione della categoria nel PDF
+                if (cat.descrizione) {
+                    doc.setFont("helvetica", "normal");
+                    doc.setFontSize(9);
+                    const descLines = doc.splitTextToSize(cat.descrizione, 180);
+                    doc.text(descLines, 10, y);
+                    y += (descLines.length * 5) + 3;
+                }
+
+                cat.sezioni.forEach((sec, sIdx) => {
+                    const selected = Array.from(document.querySelectorAll(`input[name="q_${cIdx}_${sIdx}"]:checked`)).map(e => e.value);
+                    if(selected.length > 0) {
+                        if (y > 275) { doc.addPage(); y = 20; }
+                        doc.setFont("helvetica", "bold"); doc.setFontSize(10);
+                        doc.setTextColor(0);
+                        const qLines = doc.splitTextToSize(sec.domanda + ":", 175);
+                        doc.text(qLines, 15, y);
+                        y += (qLines.length * 6);
+                        doc.setFont("helvetica", "normal");
+                        selected.forEach(val => {
+                            const resLines = doc.splitTextToSize("• " + val, 170);
+                            if (y > 280) { doc.addPage(); y = 20; }
+                            doc.text(resLines, 20, y);
+                            y += (resLines.length * 6);
+                        });
+                        y += 3;
+                    }
+                });
+                y += 4;
+            });
+
+            doc.addPage(); y = 20;
+            doc.setFont("helvetica", "bold"); doc.setFontSize(14);
+            doc.text("NOTE E OSSERVAZIONI", 10, y); y += 10;
+            activeData.osservazioni.forEach((label, idx) => {
+                const val = document.getElementById(`obs_text_${currentID}_${idx}`).value;
+                if(val) {
+                    if (y > 270) { doc.addPage(); y = 20; }
+                    doc.setFont("helvetica", "bold"); doc.setFontSize(10);
+                    doc.text(label + ":", 10, y); y += 6;
+                    doc.setFont("helvetica", "normal");
+                    const nLines = doc.splitTextToSize(val, 180);
+                    doc.text(nLines, 15, y);
+                    y += (nLines.length * 6) + 6;
+                }
+            });
+            
+            // MODIFICA: Usa il titolo della griglia per il nome del file PDF con data e ora
+            const now = new Date();
+            const dateStr = now.toISOString().slice(0, 10); // YYYY-MM-DD
+            const timeStr = now.toTimeString().slice(0, 8).replace(/:/g, '-'); // HH-MM-SS
+            
+            const sanitizedTitle = activeData.titolo.replace(/[^\w\s]/gi, '_').replace(/\s+/g, '_');
+            const fileName = `${sanitizedTitle}_${dateStr}_${timeStr}.pdf`;
+            doc.save(fileName);
+        }
+    </script>
+</body>
+</html>
