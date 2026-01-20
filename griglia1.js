@@ -77,6 +77,14 @@ _Esplora i tratti disposizionali che influenzano lo stile relazionale dell'alunn
 - Molto insicuro, evita l'esposizione
 - Totalmente insicuro, bloccato
 
+### Percezione di sé nel gruppo classe (prospettiva soggettiva)
+- Si percepisce come parte integrante e valorizzata del gruppo, si sente apprezzato
+- Si sente accettato e appartenente al gruppo classe
+- Si percepisce come osservatore più che come partecipante attivo
+- Si sente tollerato ma non pienamente accolto, percepisce distanza emotiva
+- Si percepisce diverso, ai margini del gruppo, non compreso
+- Si sente escluso, estraneo o rifiutato dal gruppo
+
 ### Empatia e sensibilità
 - Molto empatico, attento ai bisogni altrui
 - Empatico, sa mettersi nei panni degli altri
@@ -100,59 +108,6 @@ _Esplora i tratti disposizionali che influenzano lo stile relazionale dell'alunn
 - Raramente si offre di aiutare gli altri
 - Aiuta solo se c'è un vantaggio personale
 - Mai comportamenti pro-sociali
-
----
-
-## AREA DEL SÉ E MOTIVAZIONE ALL'APPRENDIMENTO
-_Esplora la percezione di sé dell'alunno, il senso di autoefficacia, l'autostima e la motivazione verso l'apprendimento, elementi fondamentali per la dimensione affettivo-relazionale secondo le Linee Guida del PEI._
-
-### Autostima generale
-- Elevata autostima, si percepisce positivamente in tutti i contesti (familiare, scolastico, sociale)
-- Buona autostima generale, si valuta positivamente nella maggior parte delle situazioni
-- Autostima variabile a seconda del contesto (positiva a casa, incerta a scuola o viceversa)
-- Autostima fragile, momenti alternati di fiducia e sfiducia in se stesso
-- Bassa autostima, si percepisce inadeguato e poco capace
-- Autostima molto bassa, sentimenti pervasivi di inadeguatezza e scarso valore personale
-
-### Senso di autoefficacia
-- Forte senso di autoefficacia, si sente capace di affrontare compiti e situazioni nuove con successo
-- Buon senso di autoefficacia in ambiti familiari, si sente competente nelle attività conosciute
-- Autoefficacia specifica in alcuni ambiti (es. sport, arte, relazioni) ma non in altri (es. area cognitiva)
-- Autoefficacia limitata, dubbi frequenti sulle proprie capacità di riuscita
-- Scarso senso di autoefficacia, si sente incapace anche di fronte a compiti alla sua portata
-- Totale assenza di autoefficacia, rinuncia preventivamente convinto di non farcela
-
-### Stile di attribuzione e locus of control
-- Attribuzione bilanciata e flessibile: riconosce il proprio ruolo e i fattori esterni in modo realistico (bi-locus)
-- Attribuzione prevalentemente interna: si sente responsabile degli eventi, riconosce il proprio impegno
-- Attribuzione prevalentemente esterna: tende ad attribuire successi e insuccessi a fattori esterni (fortuna, difficoltà, altri)
-- Attribuzione interna rigida e negativa: si colpevolizza eccessivamente per gli insuccessi
-- Attribuzione esterna rigida: si sente totalmente in balia degli eventi, nessun controllo percepito
-- Nessuna consapevolezza delle cause, non riflette su successi e insuccessi
-
-### Percezione di sé nel gruppo classe (prospettiva soggettiva)
-- Si percepisce come parte integrante e valorizzata del gruppo, si sente apprezzato
-- Si sente accettato e appartenente al gruppo classe
-- Si percepisce come osservatore più che come partecipante attivo
-- Si sente tollerato ma non pienamente accolto, percepisce distanza emotiva
-- Si percepisce diverso, ai margini del gruppo, non compreso
-- Si sente escluso, estraneo o rifiutato dal gruppo
-
-### Motivazione all'apprendimento
-- Motivazione intrinseca elevata: apprende per curiosità, piacere di scoprire, soddisfazione personale
-- Buona motivazione intrinseca in ambiti di interesse, necessita di stimoli esterni per altri
-- Motivazione prevalentemente estrinseca: necessita di rinforzi, riconoscimenti, premi, voti
-- Motivazione discontinua e dipendente dal contesto, dall'umore o dalla relazione con l'insegnante
-- Scarsa motivazione all'apprendimento, partecipazione passiva e disinteressata
-- Assenza di motivazione, disinteresse generalizzato verso le attività scolastiche e formative
-
-### Atteggiamento verso l'errore
-- Considera l'errore un'opportunità di apprendimento, chiede spiegazioni e si corregge autonomamente
-- Accetta l'errore con serenità, cerca di comprendere e correggere
-- Manifesta iniziale disagio ma supera l'errore con supporto e incoraggiamento
-- Si scoraggia facilmente di fronte agli errori, tende a evitare situazioni in cui potrebbe sbagliare
-- Si blocca emotivamente di fronte all'errore, senso di colpa o vergogna
-- Rifiuta di riconoscere l'errore, reagisce con rabbia, negazione o attribuisce la colpa ad altri
 
 ---
 
