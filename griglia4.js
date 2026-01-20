@@ -3,13 +3,25 @@ const griglia4 = `# GRIGLIA DI OSSERVAZIONE DELLA DIMENSIONE COGNITIVA, NEUROPSI
 ## FUNZIONAMENTO COGNITIVO GENERALE
 _Valuta il livello generale di sviluppo cognitivo, le capacità di ragionamento logico e la flessibilità nel pensiero, fornendo una panoramica delle risorse intellettive di base._
 
-### Livello di sviluppo cognitivo
+### Stadio di sviluppo prevalente (Rif. Piaget)
+- Senso-motorio: Apprendimento attraverso i sensi e l'azione diretta sugli oggetti.
+- Pre-operatorio: Presenza di simbolismo (gioco, linguaggio), ma pensiero egocentrico e irreversibile.
+- Operatorio concreto: Capacità di compiere operazioni logiche solo su supporti materiali e contesti noti.
+- Operatorio formale: Capacità di ragionamento ipotetico-deduttivo, astrazione completa e sintesi.
+
+### Livello di sviluppo cognitivo (Relazione con la fascia d'età)
 - Sviluppo cognitivo superiore alla fascia d'età
 - Sviluppo cognitivo in linea con la fascia d'età
 - Sviluppo cognitivo lievemente al di sotto della fascia d'età
 - Sviluppo cognitivo moderatamente al di sotto della fascia d'età
 - Sviluppo cognitivo significativamente al di sotto della fascia d'età
 - Sviluppo cognitivo gravemente compromesso
+
+### Capacità di Astrazione e Simbolizzazione
+- Pensiero legato esclusivamente al dato concreto e presente.
+- Inizio di rappresentazione mentale con supporto di immagini/foto (livello iconico).
+- Utilizza simboli e segni astratti in contesti strutturati (numeri, lettere).
+- Gestisce concetti astratti, metafore e generalizzazioni in autonomia.
 
 ### Capacità di ragionamento logico
 - Eccellente capacità di ragionamento astratto e logico
@@ -27,12 +39,18 @@ _Valuta il livello generale di sviluppo cognitivo, le capacità di ragionamento 
 - Marcata rigidità, persevera su strategie inefficaci
 - Totale rigidità cognitiva, necessita intervento costante
 
+### Stile di elaborazione prevalente
+- Analitico: Si focalizza sui singoli dettagli, faticando a cogliere l'insieme.
+- Globale: Coglie l'insieme della situazione, ma può trascurare dettagli fondamentali.
+- Sistematico: Procede per piccoli passi logici e sequenziali.
+- Intuitivo: Arriva alla soluzione in modo rapido ma non sempre sa spiegare il processo.
+
 ---
 
 ## ATTENZIONE E CONCENTRAZIONE
-_Osserva le diverse componenti dell'attenzione: capacità di mantenere il focus, selezionare stimoli rilevanti, sostenere lo sforzo nel tempo e gestire più compiti contemporaneamente._
+_Osserva le diverse componenti dell'attenzione e la loro interazione con le funzioni esecutive (inibizione, memoria di lavoro, shifting)._
 
-### Capacità attentiva generale
+### Capacità attentiva generale (Resistenza)
 - Attenzione prolungata e costante (oltre 30 minuti)
 - Buona capacità attentiva (20-30 minuti)
 - Attenzione discreta (15-20 minuti)
@@ -40,29 +58,35 @@ _Osserva le diverse componenti dell'attenzione: capacità di mantenere il focus,
 - Attenzione molto breve (5-10 minuti)
 - Attenzione labile o assente (meno di 5 minuti)
 
-### Attenzione selettiva
-- Filtra efficacemente stimoli distrattori
-- Buona capacità di focalizzazione su stimolo target
-- Focalizza con qualche difficoltà in presenza di distrattori
-- Facile distraibilità da stimoli esterni
-- Molto distraibile, attenzione catturata da ogni stimolo
-- Impossibilità di selezionare stimoli rilevanti
+### Attenzione Selettiva e Inibizione
+- Filtra i distrattori e resiste agli impulsi irrilevanti
+- Buona focalizzazione, ignora stimoli marginali
+- Si distrae in presenza di forti stimoli ambientali
+- Facile distraibilità: ogni stimolo cattura l'attenzione
+- Impulsività attentiva: risponde a stimoli errati prima di riflettere
+- Impossibilità di selezione e controllo inibitorio
 
-### Attenzione sostenuta nel tempo
-- Mantiene concentrazione per tutta la durata del compito
-- Mantiene concentrazione con brevi pause
-- Necessita di pause frequenti per mantenere attenzione
-- Concentrazione cala rapidamente
-- Non mantiene concentrazione senza supporto continuo
-- Impossibile mantenere attenzione sostenuta
+### Attenzione Sostenuta e Vigilanza
+- Mantiene l'allerta alta per tutta la durata dell'attività
+- Mantiene la concentrazione con brevi pause/sollecitazioni
+- La vigilanza cala sensibilmente dopo pochi minuti
+- Necessita di stimoli continui (verbali o visivi) per non "perdersi"
+- Tendenza a estraniarsi o a mostrare estrema lentezza (sluggish tempo)
+- Impossibile mantenere l'aggancio sul compito
 
-### Attenzione divisa
-- Gestisce efficacemente compiti multipli simultanei
-- Gestisce due compiti contemporaneamente
-- Fatica con compiti multipli, esecuzione sequenziale
-- Non gestisce compiti multipli
-- Confusione con richieste multiple
-- Blocco cognitivo con più richieste
+### Shift Attentivo (Flessibilità)
+- Passa rapidamente da un'attività all'altra senza perdere il focus
+- Si adatta ai cambi di consegna con un breve tempo di latenza
+- Fatica a interrompere un'attività per iniziarne una nuova
+- Resta "ancorato" al compito precedente (perseverazione)
+- Confusione totale nel cambio di setting o attività
+
+### Attenzione Divisa e Memoria di Lavoro
+- Gestisce compiti multipli (es. ascolta e prende appunti)
+- Gestisce compiti semplici simultanei
+- Necessita di eseguire un'azione alla volta (sequenzialità rigorosa)
+- Perde le istruzioni durante l'esecuzione del compito
+- Blocco cognitivo/saturazione con più di una richiesta
 
 ---
 
