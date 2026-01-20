@@ -789,44 +789,68 @@ _Analizza lo stile cognitivo prevalente, l'approccio al compito, l'uso di strate
 
 ---
 
-## MOTIVAZIONE E ATTEGGIAMENTO VERSO L'APPRENDIMENTO
-_Valuta la motivazione intrinseca, l'atteggiamento verso i compiti, la tolleranza alla frustrazione, il senso di autoefficacia e la consapevolezza metacognitiva delle proprie difficoltà cognitive._
+## AREA DEL SÉ, MOTIVAZIONE E ATTEGGIAMENTO VERSO L’APPRENDIMENTO
+_Esplora la percezione di sé dell’alunno, il senso di autoefficacia, l’autostima, la motivazione (intrinseca ed estrinseca), l’atteggiamento verso il compito, la tolleranza alla frustrazione e la consapevolezza delle proprie difficoltà._
 
-### Motivazione intrinseca
-- Molto motivato, curioso e interessato
-- Buona motivazione verso l'apprendimento
-- Motivazione selettiva (solo per alcune attività)
-- Scarsa motivazione
-- Molto demotivato
-- Rifiuto dell'apprendimento
+### Autostima generale
+- Elevata autostima, si percepisce positivamente in tutti i contesti (familiare, scolastico, sociale)
+- Buona autostima generale, si valuta positivamente nella maggior parte delle situazioni
+- Autostima variabile a seconda del contesto (positiva a casa, incerta a scuola o viceversa)
+- Autostima fragile, alterna momenti di fiducia e sfiducia in se stesso
+- Bassa autostima, si percepisce inadeguato e poco capace
+- Autostima molto bassa, sentimenti pervasivi di inadeguatezza e scarso valore personale
+
+### Senso di autoefficacia
+- Forte senso di autoefficacia, si sente capace di affrontare compiti e situazioni nuove
+- Buon senso di autoefficacia, fiducia nelle proprie capacità soprattutto in ambiti familiari
+- Autoefficacia variabile o specifica per alcuni ambiti
+- Scarsa fiducia nelle proprie capacità, dubbi frequenti sulla riuscita
+- Senso di inadeguatezza, si sente incapace anche di fronte a compiti adeguati
+- Totale sfiducia nelle proprie capacità, rinuncia preventiva
+
+### Stile di attribuzione e locus of control
+- Attribuzione bilanciata e flessibile (bi-locus), riconosce responsabilità personali e fattori esterni
+- Attribuzione prevalentemente interna, riconosce il proprio impegno
+- Attribuzione prevalentemente esterna, attribuisce eventi a fortuna, difficoltà o altri
+- Attribuzione interna rigida e negativa, eccessiva autocritica
+- Attribuzione esterna rigida, percezione di totale mancanza di controllo
+- Assenza di riflessione sulle cause di successi e insuccessi
+
+### Motivazione all’apprendimento
+- Motivazione intrinseca elevata, apprende per curiosità e piacere personale
+- Buona motivazione, con interesse stabile
+- Motivazione selettiva o dipendente dall’ambito di interesse
+- Motivazione prevalentemente estrinseca, necessita di rinforzi esterni
+- Scarsa motivazione, partecipazione passiva
+- Assenza o rifiuto dell’apprendimento, disinteresse generalizzato
 
 ### Atteggiamento verso il compito
-- Positivo, propositivo, cerca sfide
+- Positivo e propositivo, ricerca la sfida
 - Positivo e collaborativo
 - Neutro, esegue quanto richiesto
 - Passivo, necessita di stimoli continui
 - Oppositivo verso alcune attività
-- Rifiuto sistematico
+- Rifiuto sistematico del compito
 
 ### Tolleranza alla frustrazione
-- Affronta difficoltà con determinazione
-- Gestisce frustrazioni, persevera
+- Affronta le difficoltà con determinazione e perseveranza
+- Gestisce la frustrazione e tenta strategie alternative
 - Sopporta frustrazioni lievi
 - Bassa tolleranza, si scoraggia facilmente
 - Si blocca di fronte alle difficoltà
-- Reazioni eccessive, abbandono immediato
+- Reazioni emotive eccessive, abbandono immediato
 
-### Senso di autoefficacia
-- Forte senso di autoefficacia
-- Buona fiducia nelle proprie capacità
-- Autoefficacia variabile
-- Scarsa fiducia in sé
-- Senso di inadeguatezza
-- Totale sfiducia nelle proprie capacità
+### Atteggiamento verso l’errore
+- Considera l’errore un’opportunità di apprendimento
+- Accetta l’errore e cerca di correggerlo
+- Disagio iniziale, supera l’errore con supporto
+- Si scoraggia e tende a evitare il rischio di errore
+- Blocco emotivo, vergogna o senso di colpa
+- Rifiuta l’errore, reagisce con rabbia o attribuzione della colpa ad altri
 
-### Riconoscimento delle difficoltà cognitive
-- Piena consapevolezza dei propri limiti cognitivi, chiede aiuto appropriatamente
-- Riconosce quando non comprende o ha difficoltà
+### Consapevolezza delle difficoltà cognitive (metacognizione)
+- Piena consapevolezza dei propri limiti, chiede aiuto in modo appropriato
+- Riconosce quando non comprende o incontra difficoltà
 - Consapevolezza parziale delle difficoltà
 - Scarsa consapevolezza dei propri limiti
 - Non riconosce le difficoltà cognitive
