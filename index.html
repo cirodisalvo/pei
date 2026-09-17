@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Griglie di Osservazione PEI - Gestione File</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #f1f5f9; 
+            color: #0f172a; 
+        }
+        .glass-header {
+            background: rgba(241, 245, 249, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 2px solid #e2e8f0;
+        }
+        .card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .input-dark {
+            background-color: #f8fafc;
+            border: 2px solid #cbd5e1;
+            color: #0f172a;
+        }
+        .input-dark:focus {
+            border-color: #475569;
+            outline: none;
+        }
+        .scroll-mt-header {
+            scroll-margin-top: 100px;
+        }
+
+        #sidebar-drawer {
+            transition: transform 0.3s ease-in-out;
+            z-index: 100;
+        }
+        .sidebar-hidden { transform: translateX(-100%); }
+        .sidebar-visible { transform: translateX(0); }
+        #sidebar-overlay {
+            display: none;
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(2px);
+            z-index: 90;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="sidebar-overlay" class="fixed inset-0" onclick="toggleSidebar()"></div>
+    <div id="sidebar-drawer" class="fixed top-0 left-0 h-full w-80 bg-white shadow-2xl sidebar-hidden flex flex-col p-6">
+        <div class="flex justify-between items-center mb-8">
+            <h3 class="font-black text-slate-900 uppercase tracking-tighter text-lg">Indice Categorie</h3>
+            <button onclick="toggleSidebar()" class="text-slate-400 hover:text-black">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+        </div>
+        <nav id="sidebar-nav" class="flex flex-col gap-1 overflow-y-auto pr-2"></nav>
+    </div>
+
+    <div id="selector-screen" class="min-h-screen flex flex-col items-center justify-center p-6 text-center">
+        <div class="max-w-2xl mb-10 p-4 bg-emerald-50 border border-emerald-200 rounded-2xl flex items-start gap-4 text-left">
+            <div class="text-emerald-600 mt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+            </div>
+            <div>
+                <h4 class="text-emerald-900 font-bold text-sm uppercase tracking-tight">Portabilità dei Dati</h4>
+                <p class="text-emerald-700 text-xs leading-relaxed mt-1">Puoi salvare il tuo lavoro in un file <strong>.json</strong> sul tuo PC e ricaricarlo in qualsiasi momento. Nessun dato viene salvato su server esterni: la tua privacy è garantita.</p>
+            </div>
+        </div>
+
+        <h1 class="text-4xl font-extrabold mb-4 tracking-tight">Griglie di osservazione per il PEI</h1>
+        <p class="mb-12 text-slate-500 font-medium">Strumento professionale per la redazione del Piano Educativo Individualizzato</p>
+
+        <div id="grid-selector-container" class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl text-left">
+            <!-- Le card vengono generate automaticamente da JS leggendo titolo e descrizione di ogni file griglia -->
+        </div>
+    </div>
+
+    <div id="app-content" class="hidden">
+        <header class="sticky top-0 z-50 glass-header px-4 py-4">
+            <div class="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-4">
+                <div class="flex items-center gap-3">
+                    <button onclick="window.location.reload()" class="font-bold text-slate-600 hover:text-black flex items-center gap-2 text-sm uppercase">← MENU</button>
+                    <button onclick="toggleSidebar()" class="bg-slate-100 text-slate-900 px-4 py-2 rounded-xl font-bold hover:bg-slate-200 transition-all text-xs uppercase flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                        Indice
+                    </button>
+                </div>
+                <div class="flex gap-2">
+                    <button onclick="document.getElementById('upload-json').click()" class="bg-white border-2 border-slate-300 text-slate-700 px-4 py-2 rounded-xl font-bold hover:bg-slate-50 transition-all text-xs uppercase">Carica Progetto</button>
+                    <input type="file" id="upload-json" class="hidden" accept=".json" onchange="importFromJson(event)">
+                    <button onclick="exportToJson()" class="bg-blue-600 text-white px-4 py-2 rounded-xl font-bold shadow-md hover:bg-blue-700 transition-all text-xs uppercase">Salva Progetto</button>
+                    <button onclick="exportToPdf()" class="bg-slate-900 text-white px-4 py-2 rounded-xl font-bold shadow-md hover:bg-black transition-all text-xs uppercase">Esporta PDF</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="max-w-3xl mx-auto px-6 py-12">
+            <h2 id="grid-title" class="text-3xl font-extrabold mb-12 text-center uppercase tracking-tight text-slate-900"></h2>
+            <div class="card p-8 rounded-3xl mb-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase mb-2 tracking-widest">Periodo dal</label>
+                        <input type="date" id="date-from" oninput="saveData()" class="w-full input-dark rounded-xl p-4 font-bold">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase mb-2 tracking-widest">Al</label>
+                        <input type="date" id="date-to" oninput="saveData()" class="w-full input-dark rounded-xl p-4 font-bold">
+                    </div>
+                </div>
+            </div>
+            <div id="categories-container" class="space-y-16"></div>
+            <div class="mt-20 space-y-8">
+                <h3 id="anchor-osservazioni" class="text-2xl font-black border-l-8 border-slate-900 pl-4 uppercase tracking-tighter scroll-mt-header">OSSERVAZIONI FINALI</h3>
+                <div id="observations-container" class="space-y-6"></div>
+            </div>
+        </main>
+    </div>
+
+    <!--
+        NUOVA GRIGLIA = SOLO UN FILE, NESSUNA MODIFICA A QUESTO HTML.
+        Per aggiungere una nuova griglia:
+        1) Crea un file "grigliaN.js" (dove N è il numero progressivo successivo
+           libero, es. griglia6.js) nella stessa cartella di questo index.html.
+        2) Usa lo stesso formato degli altri file:
+           - dentro, definisci  const grigliaN = `...`  con lo stesso nome N
+             usato nel filename;
+           - prima riga del testo: "# Titolo"
+           - seconda riga: "_Descrizione_"
+           - poi le categorie come negli altri file.
+        Titolo e descrizione della card vengono letti automaticamente dal file.
+        All'apertura della pagina, i file griglia1.js, griglia2.js, griglia3.js...
+        vengono cercati e caricati automaticamente in ordine, finché non se ne
+        trova più uno (fino a un massimo di MAX_GRIDS_TO_PROBE, modificabile
+        qui sotto se un giorno servissero più di 30 griglie).
+    -->
+
+    <script>
+        // Numero massimo di griglie che vengono cercate automaticamente
+        // (griglia1.js, griglia2.js, ... fino a questo numero). Aumentalo
+        // se in futuro avrai più di 30 griglie.
+        const MAX_GRIDS_TO_PROBE = 30;
+
+        // Elenco delle griglie effettivamente trovate, popolato automaticamente
+        // da discoverGrids() prima di mostrare la schermata iniziale.
+        let GRIGLIE_CONFIG = [];
+
+        // Palette di colori usata a rotazione per le card della schermata iniziale
+        const COLOR_PALETTE = [
+            { text: 'text-blue-600', hover: 'group-hover:text-blue-600' },
+            { text: 'text-emerald-600', hover: 'group-hover:text-emerald-600' },
+            { text: 'text-amber-600', hover: 'group-hover:text-amber-600' },
+            { text: 'text-rose-600', hover: 'group-hover:text-rose-600' },
+            { text: 'text-violet-600', hover: 'group-hover:text-violet-600' },
+            { text: 'text-cyan-600', hover: 'group-hover:text-cyan-600' },
+            { text: 'text-fuchsia-600', hover: 'group-hover:text-fuchsia-600' },
+            { text: 'text-lime-600', hover: 'group-hover:text-lime-600' },
+        ];
+
+        let activeData = null;
+        let currentID = "";
+
+   function parseMarkdownGrid(mdString) {
+    const lines = mdString.split('\n');
+    const data = { titolo: '', descrizione: '', categorie: [], osservazioni: [] };
+    
+    let currentCategory = null;
+    let currentSection = null;
+    let inObservations = false;
+    
+    for (let i = 0; i < lines.length; i++) {
+        const line = lines[i].trim();
+        
+        // Titolo principale (# ...)
+        if (line.startsWith('# ') && !data.titolo) {
+            data.titolo = line.substring(2).trim();
+            
+            // Leggi descrizione generale (riga successiva con _..._)
+            if (i + 1 < lines.length && lines[i + 1].trim().startsWith('_')) {
+                data.descrizione = lines[i + 1].trim().replace(/^_|_$/g, '');
+                i++;
+            }
+            continue;
+        }
+        
+        // Categoria (## ...)
+        if (line.startsWith('## ')) {
+            if (line.startsWith('## OSSERVAZIONI')) {
+                inObservations = true;
+                currentCategory = null;
+                continue;
+            }
+            
+            inObservations = false;
+            currentCategory = {
+                nome: line.substring(3).trim(),
+                descrizione: '',
+                sezioni: []
+            };
+            data.categorie.push(currentCategory);
+            
+            // Leggi descrizione (riga successiva con _...)
+            if (i + 1 < lines.length && lines[i + 1].trim().startsWith('_')) {
+                currentCategory.descrizione = lines[i + 1].trim().replace(/^_|_$/g, '');
+                i++;
+            }
+            continue;
+        }
+        
+        // Sezione/Domanda (### ...)
+        if (line.startsWith('### ')) {
+            if (inObservations) {
+                // Rimuovi i due punti finali se presenti per un titolo più pulito
+                let titolo = line.substring(4).trim();
+                if (titolo.endsWith(':')) {
+                    titolo = titolo.slice(0, -1).trim();
+                }
+                data.osservazioni.push(titolo);
+                continue;
+            }
+            
+            if (currentCategory) {
+                currentSection = {
+                    domanda: line.substring(4).trim(),
+                    opzioni: []
+                };
+                currentCategory.sezioni.push(currentSection);
+            }
+            continue;
+        }
+        
+        // Opzioni (- ...)
+        if (line.startsWith('- ') && currentSection) {
+            currentSection.opzioni.push(line.substring(2).trim());
+            continue;
+        }
+        
+        // Separatore (---)
+        if (line === '---') {
+            currentSection = null;
+            continue;
+        }
+    }
+    
+    return data;
+}
+
+        function toggleSidebar() {
+            const drawer = document.getElementById('sidebar-drawer');
+            const overlay = document.getElementById('sidebar-overlay');
+            if(drawer.classList.contains('sidebar-hidden')) {
+                drawer.classList.replace('sidebar-hidden', 'sidebar-visible');
+                overlay.style.display = 'block';
+            } else {
+                drawer.classList.replace('sidebar-visible', 'sidebar-hidden');
+                overlay.style.display = 'none';
+            }
+        }
+
+        // Genera automaticamente le card della schermata iniziale leggendo
+        // titolo e descrizione dalle prime righe di ogni file griglia registrato
+        // in GRIGLIE_CONFIG (nessun testo da scrivere a mano qui).
+        function renderSelectorScreen() {
+            const container = document.getElementById('grid-selector-container');
+            container.innerHTML = '';
+
+            GRIGLIE_CONFIG.forEach((cfg, idx) => {
+                const mdString = cfg.mdString;
+
+                if (!mdString) {
+                    console.warn('Griglia non trovata: variabile "' + cfg.varName + '". Verifica che il file ' + cfg.varName + '.js sia presente nella stessa cartella di index.html.');
+                    return;
+                }
+
+                const parsed = parseMarkdownGrid(mdString);
+                const color = COLOR_PALETTE[idx % COLOR_PALETTE.length];
+                // Se è l'ultima card e il totale è dispari, occupa tutta la larghezza
+                const isLastOdd = (idx === GRIGLIE_CONFIG.length - 1) && (GRIGLIE_CONFIG.length % 2 !== 0);
+                const spanClass = isLastOdd ? ' md:col-span-2' : '';
+
+                const btn = document.createElement('button');
+                btn.className = 'card p-8 rounded-3xl hover:border-slate-400 transition-all group' + spanClass;
+                btn.onclick = () => initApp(idx);
+                btn.innerHTML = `
+                    <span class="${color.text} font-bold text-xs block mb-2 uppercase tracking-[0.2em]">Griglia ${idx + 1}</span>
+                    <h2 class="text-xl font-bold ${color.hover} transition-colors">${parsed.titolo}</h2>
+                    <p class="mt-3 text-slate-500 text-sm leading-relaxed">${parsed.descrizione}</p>
+                `;
+                container.appendChild(btn);
+            });
+        }
+
+        function initApp(index) {
+            const cfg = GRIGLIE_CONFIG[index];
+            if (!cfg) {
+                alert('Griglia non trovata!');
+                return;
+            }
+
+            const mdString = cfg.mdString;
+            if (!mdString) {
+                alert('Errore: la griglia "' + cfg.varName + '" non è stata caricata correttamente. Assicurati che il file ' + cfg.varName + '.js sia presente nella stessa cartella di index.html.');
+                return;
+            }
+            
+            activeData = parseMarkdownGrid(mdString);
+            currentID = cfg.id;
+            
+            document.getElementById('selector-screen').classList.add('hidden');
+            document.getElementById('app-content').classList.remove('hidden');
+            document.getElementById('grid-title').innerText = activeData.titolo;
+            renderGrid(); 
+            renderObservations(); 
+            loadSavedData();
+            window.scrollTo(0,0);
+        }
+
+        // Carica il file grigliaN.js e ne estrae direttamente il valore della
+        // variabile "grigliaN" eseguendo il testo del file in un ambiente isolato.
+        // Questo evita di dipendere dal fatto che una const/let dichiarata in uno
+        // <script> caricato dinamicamente resti "visibile" al resto della pagina:
+        // comportamento che cambia da browser a browser (es. differisce tra
+        // Chrome e Firefox quando si apre il file con doppio click).
+        //
+        // Metodo A (preferito): legge il file come testo con fetch() ed esegue
+        // il codice tramite "new Function", leggendo il valore col "return" —
+        // niente dipendenza da variabili globali condivise, massima compatibilità.
+        // Metodo B (fallback): se fetch non è disponibile (capita in Chrome
+        // quando la pagina è aperta come file:// locale), carica il file con un
+        // normale tag <script> e prova comunque a leggere la variabile globale.
+        async function loadGridSource(n) {
+            const varName = 'griglia' + n;
+            const fileName = varName + '.js';
+
+            // --- Metodo A: fetch + esecuzione isolata del testo del file ---
+            try {
+                const res = await fetch(fileName);
+                if (res.ok) {
+                    const text = await res.text();
+                    const value = new Function(
+                        text + '\n;return (typeof ' + varName + ' !== "undefined") ? ' + varName + ' : undefined;'
+                    )();
+                    if (value) return value;
+                }
+            } catch (e) {
+                // fetch bloccato (tipico di Chrome con file:// locale): si prova col Metodo B
+            }
+
+            // --- Metodo B: tag <script> + lettura della variabile globale risultante ---
+            const loaded = await loadScript(fileName);
+            if (loaded) {
+                try {
+                    const value = new Function(
+                        'return (typeof ' + varName + ' !== "undefined") ? ' + varName + ' : undefined;'
+                    )();
+                    if (value) return value;
+                } catch (e) {
+                    return null;
+                }
+            }
+
+            return null;
+        }
+
+        // Carica dinamicamente un file .js come tag <script> e risolve true/false
+        // a seconda che il caricamento sia riuscito o meno (usato come fallback).
+        function loadScript(src) {
+            return new Promise((resolve) => {
+                const s = document.createElement('script');
+                s.src = src;
+                s.onload = () => resolve(true);
+                s.onerror = () => { s.remove(); resolve(false); };
+                document.head.appendChild(s);
+            });
+        }
+
+        // Cerca in automatico griglia1.js, griglia2.js, griglia3.js... e le carica
+        // una ad una, fermandosi dopo MAX_GRIDS_TO_PROBE tentativi. Il contenuto di
+        // ogni griglia trovata viene salvato direttamente in GRIGLIE_CONFIG
+        // (campo mdString), così non serve più rileggerlo in seguito.
+        async function discoverGrids() {
+            const found = [];
+            for (let n = 1; n <= MAX_GRIDS_TO_PROBE; n++) {
+                const varName = 'griglia' + n;
+                const mdString = await loadGridSource(n);
+                if (mdString) {
+                    found.push({ varName: varName, id: 'g' + n, mdString: mdString });
+                }
+            }
+            return found;
+        }
+
+        // Punto di ingresso: scopre le griglie disponibili, poi disegna la schermata iniziale
+        async function bootstrap() {
+            GRIGLIE_CONFIG = await discoverGrids();
+            if (GRIGLIE_CONFIG.length === 0) {
+                console.warn('Nessun file griglia trovato (griglia1.js, griglia2.js, ...). Verifica che i file siano nella stessa cartella di index.html.');
+            }
+            renderSelectorScreen();
+        }
+
+        bootstrap();
+
+        function renderGrid() {
+            const container = document.getElementById('categories-container');
+            const sidebar = document.getElementById('sidebar-nav');
+            container.innerHTML = ''; 
+            sidebar.innerHTML = '';
+            
+            activeData.categorie.forEach((cat, cIdx) => {
+                const catId = `cat_section_${cIdx}`;
+                sidebar.innerHTML += `<button onclick="document.getElementById('${catId}').scrollIntoView({behavior: 'smooth'}); toggleSidebar();" class="text-left px-4 py-3 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-all border-l-2 border-transparent hover:border-slate-300 leading-tight">${cat.nome}</button>`;
+                
+                let html = `<div id="${catId}" class="scroll-mt-header"><h3 class="text-slate-500 font-bold text-sm uppercase tracking-widest mb-2 border-b-2 border-slate-200 pb-2">${cat.nome}</h3>`;
+                if (cat.descrizione) html += `<p class="text-slate-500 text-sm mb-6 leading-relaxed">${cat.descrizione}</p>`;
+                
+                cat.sezioni.forEach((sec, sIdx) => {
+                    html += `<div class="mb-10"><p class="font-bold text-xl mb-5 text-slate-900">${sec.domanda}</p><div class="grid grid-cols-1 gap-3">`;
+                    sec.opzioni.forEach((opt, oIdx) => {
+                        const uniqueId = `check_${currentID}_${cIdx}_${sIdx}_${oIdx}`;
+                        const escapedOpt = opt.replace(/"/g, '&quot;');
+                        if (/^altro\s*:/i.test(opt.trim())) {
+                            html += `<div class="card p-5 rounded-2xl"><label for="${uniqueId}" class="flex items-center gap-4 cursor-pointer"><input type="checkbox" id="${uniqueId}" onchange="saveData()" name="q_${cIdx}_${sIdx}" value="${escapedOpt}" class="h-6 w-6 accent-slate-900"><span class="text-slate-800 font-medium">${opt}</span></label><input type="text" id="altro_${uniqueId}" oninput="saveData()" placeholder="Specifica..." class="altro-input w-full input-dark rounded-xl p-3 mt-3 text-sm"></div>`;
+                        } else {
+                            html += `<div class="card flex items-center gap-3 p-5 rounded-2xl hover:bg-slate-50 transition-all">
+                                <label for="${uniqueId}" class="flex items-center gap-4 cursor-pointer flex-1">
+                                    <input type="checkbox" id="${uniqueId}" onchange="handleOptionToggle('${uniqueId}')" name="q_${cIdx}_${sIdx}" value="${escapedOpt}" data-original-text="${escapedOpt}" class="h-6 w-6 accent-slate-900">
+                                    <span id="text_${uniqueId}" class="text-slate-800 font-medium option-text">${opt}</span>
+                                </label>
+                                <button type="button" id="editbtn_${uniqueId}" onclick="startEditOption('${uniqueId}')" class="edit-option-btn hidden shrink-0 text-slate-400 hover:text-slate-900 p-2 rounded-lg hover:bg-slate-100 transition-all" title="Modifica il testo di questa opzione">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
+                                </button>
+                            </div>`;
+                        }
+                    });
+                    html += `</div></div>`;
+                });
+                html += `</div>`;
+                container.innerHTML += html;
+            });
+            
+            sidebar.innerHTML += `<div class="my-4 border-t border-slate-100"></div><button onclick="document.getElementById('anchor-osservazioni').scrollIntoView({behavior: 'smooth'}); toggleSidebar();" class="text-left px-4 py-3 rounded-xl text-sm font-bold text-slate-900 hover:bg-slate-50 transition-all">NOTE FINALI</button>`;
+        }
+
+        function renderObservations() {
+            const obsContainer = document.getElementById('observations-container');
+            obsContainer.innerHTML = '';
+            activeData.osservazioni.forEach((label, idx) => {
+                obsContainer.innerHTML += `<div class="card p-8 rounded-3xl"><label class="block font-bold text-slate-500 text-xs uppercase mb-4 tracking-widest">${label}</label><textarea id="obs_text_${currentID}_${idx}" oninput="saveData()" class="w-full bg-slate-50 border-2 border-slate-200 rounded-xl p-4 text-slate-900 outline-none focus:border-slate-900 transition-all" rows="4"></textarea></div>`;
+            });
+        }
+
+        // Mostra/nasconde il pulsante di modifica in base allo stato del checkbox.
+        // Se l'opzione viene deselezionata mentre è in editing, annulla la modifica in corso.
+        function updateEditButtonVisibility(id) {
+            const cb = document.getElementById(id);
+            const btn = document.getElementById('editbtn_' + id);
+            if (!cb || !btn) return;
+            if (cb.checked) {
+                btn.classList.remove('hidden');
+            } else {
+                btn.classList.add('hidden');
+                cancelEditOption(id);
+            }
+        }
+
+        function handleOptionToggle(id) {
+            updateEditButtonVisibility(id);
+            saveData();
+        }
+
+        // Sostituisce temporaneamente il testo dell'opzione con un campo di input editabile.
+        function startEditOption(id) {
+            const span = document.getElementById('text_' + id);
+            const cb = document.getElementById(id);
+            if (!span || !cb) return;
+            if (document.getElementById('editinput_' + id)) return; // già in editing
+
+            const currentText = span.textContent;
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.id = 'editinput_' + id;
+            input.value = currentText;
+            input.className = 'option-edit-input w-full input-dark rounded-lg p-2 text-sm font-medium';
+            input.onmousedown = (e) => e.stopPropagation();
+            input.onclick = (e) => e.stopPropagation();
+            input.onkeydown = (e) => {
+                e.stopPropagation();
+                if (e.key === 'Enter') { e.preventDefault(); saveEditOption(id); }
+                if (e.key === 'Escape') { e.preventDefault(); cancelEditOption(id); }
+            };
+            input.onblur = () => saveEditOption(id);
+
+            span.classList.add('hidden');
+            span.insertAdjacentElement('afterend', input);
+            input.focus();
+            input.select();
+        }
+
+        // Salva il testo modificato (se diverso dall'originale) come override sul checkbox.
+        function saveEditOption(id) {
+            const input = document.getElementById('editinput_' + id);
+            const span = document.getElementById('text_' + id);
+            const cb = document.getElementById(id);
+            if (!input || !span || !cb) return;
+
+            const newText = input.value.trim();
+            const originalText = cb.dataset.originalText || span.textContent;
+            input.remove();
+            span.classList.remove('hidden');
+
+            if (newText && newText !== originalText) {
+                span.textContent = newText;
+                cb.dataset.customText = newText;
+            } else {
+                span.textContent = originalText;
+                delete cb.dataset.customText;
+            }
+            saveData();
+        }
+
+        // Annulla l'editing in corso senza salvare modifiche.
+        function cancelEditOption(id) {
+            const input = document.getElementById('editinput_' + id);
+            const span = document.getElementById('text_' + id);
+            if (input) input.remove();
+            if (span) span.classList.remove('hidden');
+        }
+
+        function gatherCurrentData() {
+            const data = { 
+                gridID: currentID, 
+                dateFrom: document.getElementById('date-from').value, 
+                dateTo: document.getElementById('date-to').value, 
+                notes: {}, 
+                checks: {},
+                overrides: {}
+            };
+            document.querySelectorAll('input[type="checkbox"]:checked').forEach(cb => data.checks[cb.id] = true);
+            document.querySelectorAll('textarea').forEach(tx => data.notes[tx.id] = tx.value);
+            document.querySelectorAll('.altro-input').forEach(inp => data.notes[inp.id] = inp.value);
+            document.querySelectorAll('input[type="checkbox"][data-custom-text]').forEach(cb => data.overrides[cb.id] = cb.dataset.customText);
+            return data;
+        }
+
+        function saveData() { 
+            localStorage.setItem('pei_pro_v5_' + currentID, JSON.stringify(gatherCurrentData())); 
+        }
+        
+        function loadSavedData() { 
+            const saved = localStorage.getItem('pei_pro_v5_' + currentID); 
+            if(saved) fillForm(JSON.parse(saved)); 
+        }
+        
+        function fillForm(data) {
+            if(!data) return;
+            document.getElementById('date-from').value = data.dateFrom || "";
+            document.getElementById('date-to').value = data.dateTo || "";
+            document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+                cb.checked = false;
+                delete cb.dataset.customText;
+                const span = document.getElementById('text_' + cb.id);
+                if (span && cb.dataset.originalText) span.textContent = cb.dataset.originalText;
+            });
+            document.querySelectorAll('.altro-input').forEach(inp => inp.value = "");
+            for(let id in data.checks) { 
+                if(document.getElementById(id)) document.getElementById(id).checked = true; 
+            }
+            for(let id in data.notes) { 
+                if(document.getElementById(id)) document.getElementById(id).value = data.notes[id]; 
+            }
+            if (data.overrides) {
+                for (let id in data.overrides) {
+                    const cb = document.getElementById(id);
+                    const span = document.getElementById('text_' + id);
+                    if (cb && span) {
+                        cb.dataset.customText = data.overrides[id];
+                        span.textContent = data.overrides[id];
+                    }
+                }
+            }
+            document.querySelectorAll('input[type="checkbox"]').forEach(cb => updateEditButtonVisibility(cb.id));
+        }
+
+        function exportToJson() {
+            const data = gatherCurrentData();
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a'); 
+            a.href = url;
+            
+            const now = new Date();
+            const dateStr = now.toISOString().slice(0, 10);
+            const timeStr = now.toTimeString().slice(0, 8).replace(/:/g, '-');
+            const sanitizedTitle = activeData.titolo.replace(/[^\w\s]/gi, '_').replace(/\s+/g, '_');
+            
+            a.download = `${sanitizedTitle}_${dateStr}_${timeStr}.json`;
+            a.click(); 
+            URL.revokeObjectURL(url);
+        }
+
+        function importFromJson(event) {
+            const file = event.target.files[0]; 
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) { 
+                try { 
+                    const data = JSON.parse(e.target.result); 
+                    fillForm(data); 
+                    saveData(); 
+                    alert("Dati importati!"); 
+                } catch (err) { 
+                    alert("Errore nel file JSON."); 
+                } 
+            };
+            reader.readAsText(file);
+        }
+
+        function exportToPdf() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const period = `Periodo di osservazione: dal ${document.getElementById('date-from').value || '___'} al ${document.getElementById('date-to').value || '___'}`;
+            
+            doc.setFont("helvetica", "bold"); 
+            doc.setFontSize(14);
+            const titleLines = doc.splitTextToSize(activeData.titolo, 180);
+            doc.text(titleLines, 10, 20);
+            let y = 20 + (titleLines.length * 7); 
+            
+            doc.setFontSize(11);
+            doc.text("Alunno: _________________________________________________  Classe: _________", 10, y);
+            y += 8; 
+            doc.text(period, 10, y);
+            y += 4; 
+            doc.line(10, y, 200, y); 
+            y += 10;
+
+            activeData.categorie.forEach((cat, cIdx) => {
+                let hasAnswers = false;
+                cat.sezioni.forEach((sec, sIdx) => {
+                    if (document.querySelectorAll(`input[name="q_${cIdx}_${sIdx}"]:checked`).length > 0) hasAnswers = true;
+                });
+
+                if (hasAnswers) {
+                    if (y > 270) { doc.addPage(); y = 20; }
+                    doc.setFont("helvetica", "bold"); 
+                    doc.setFontSize(12);
+                    doc.setTextColor(80, 80, 80);
+                    doc.text(cat.nome, 10, y); 
+                    y += 8;
+
+                    cat.sezioni.forEach((sec, sIdx) => {
+                        const selectedInputs = Array.from(document.querySelectorAll(`input[name="q_${cIdx}_${sIdx}"]:checked`));
+                        if(selectedInputs.length > 0) {
+                            if (y > 275) { doc.addPage(); y = 20; }
+                            doc.setFont("helvetica", "bold"); 
+                            doc.setFontSize(10);
+                            doc.setTextColor(0);
+                            const qLines = doc.splitTextToSize(sec.domanda + ":", 175);
+                            doc.text(qLines, 15, y); 
+                            y += (qLines.length * 6);
+                            doc.setFont("helvetica", "normal");
+                            selectedInputs.forEach(cb => {
+                                let val = cb.dataset.customText ? cb.dataset.customText : cb.value;
+                                if (/^altro\s*:/i.test(cb.value.trim())) {
+                                    const altroInput = document.getElementById('altro_' + cb.id);
+                                    if (altroInput && altroInput.value.trim()) val += ' ' + altroInput.value.trim();
+                                }
+                                const resLines = doc.splitTextToSize("• " + val, 170);
+                                if (y > 280) { doc.addPage(); y = 20; }
+                                doc.text(resLines, 20, y); 
+                                y += (resLines.length * 6);
+                            });
+                            y += 3;
+                        }
+                    });
+                    y += 5;
+                }
+            });
+
+            doc.addPage(); 
+            y = 20;
+            doc.setFont("helvetica", "bold"); 
+            doc.setFontSize(14);
+            doc.text("NOTE E OSSERVAZIONI", 10, y); 
+            y += 10;
+            activeData.osservazioni.forEach((label, idx) => {
+                const val = document.getElementById(`obs_text_${currentID}_${idx}`).value;
+                if(val) {
+                    if (y > 270) { doc.addPage(); y = 20; }
+                    doc.setFont("helvetica", "bold"); 
+                    doc.setFontSize(10);
+                    doc.text(label + ":", 10, y); 
+                    y += 6;
+                    doc.setFont("helvetica", "normal");
+                    const nLines = doc.splitTextToSize(val, 180);
+                    doc.text(nLines, 15, y); 
+                    y += (nLines.length * 6) + 6;
+                }
+            });
+            
+            const now = new Date();
+            const dateStr = now.toISOString().slice(0, 10);
+            const timeStr = now.toTimeString().slice(0, 8).replace(/:/g, '-');
+            const sanitizedTitle = activeData.titolo.replace(/[^\w\s]/gi, '_').replace(/\s+/g, '_');
+            doc.save(`${sanitizedTitle}_${dateStr}_${timeStr}.pdf`);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,973 @@
+const griglia4 = `# DIMENSIONE COGNITIVA, NEUROPSICOLOGICA E DELL'APPRENDIMENTO
+_Valutazione delle abilità cognitive, strategie di apprendimento, risoluzione di problemi e capacità di generalizzare le competenze_
+
+## FUNZIONAMENTO COGNITIVO GENERALE
+_Valuta il livello generale di sviluppo cognitivo, le capacità di ragionamento logico e la flessibilità nel pensiero, fornendo una panoramica delle risorse intellettive di base._
+
+### Stadio di sviluppo prevalente (Rif. Piaget)
+- Senso-motorio: Apprendimento attraverso i sensi e l'azione diretta sugli oggetti.
+- Pre-operatorio: Presenza di simbolismo (gioco, linguaggio), ma pensiero egocentrico e irreversibile.
+- Operatorio concreto: Capacità di compiere operazioni logiche solo su supporti materiali e contesti noti.
+- Operatorio formale: Capacità di ragionamento ipotetico-deduttivo, astrazione completa e sintesi.
+- Altro:
+
+### Livello di sviluppo cognitivo (Relazione con la fascia d'età)
+- Sviluppo cognitivo superiore alla fascia d'età
+- Sviluppo cognitivo in linea con la fascia d'età
+- Sviluppo cognitivo lievemente al di sotto della fascia d'età
+- Sviluppo cognitivo significativamente al di sotto della fascia d'età
+- Sviluppo cognitivo gravemente compromesso
+- Altro:
+
+### Capacità di Astrazione e Simbolizzazione
+- Pensiero legato esclusivamente al dato concreto e presente.
+- Inizio di rappresentazione mentale con supporto di immagini/foto (livello iconico).
+- Utilizza simboli e segni astratti in contesti strutturati (numeri, lettere).
+- Utilizza simboli e concetti astratti anche in contesti nuovi, con qualche incertezza nella generalizzazione.
+- Gestisce concetti astratti, metafore e generalizzazioni in autonomia.
+- Altro:
+
+### Capacità di ragionamento logico
+- Eccellente capacità di ragionamento astratto e logico
+- Buone capacità di ragionamento, inferenze corrette
+- Discrete capacità di ragionamento in situazioni concrete
+- Ragionamento limitato a situazioni molto concrete
+- Assenza di ragionamento logico autonomo
+- Altro:
+
+### Flessibilità cognitiva
+- Molto flessibile, cambia strategie con facilità
+- Flessibile, si adatta a nuove richieste cognitive
+- Abbastanza flessibile in contesti noti
+- Marcata rigidità, persevera su strategie inefficaci
+- Totale rigidità cognitiva, necessita intervento costante
+- Altro:
+
+### Stile di elaborazione prevalente
+- Analitico: Si focalizza sui singoli dettagli, faticando a cogliere l'insieme.
+- Globale: Coglie l'insieme della situazione, ma può trascurare dettagli fondamentali.
+- Sistematico: Procede per piccoli passi logici e sequenziali.
+- Intuitivo: Arriva alla soluzione in modo rapido ma non sempre sa spiegare il processo.
+- Altro:
+
+---
+
+## ATTENZIONE E CONCENTRAZIONE
+_Osserva le diverse componenti dell'attenzione e la loro interazione con le funzioni esecutive (inibizione, memoria di lavoro, shifting)._
+
+### Capacità attentiva generale (Resistenza)
+- Attenzione prolungata e costante (oltre 30 minuti)
+- Buona capacità attentiva (20-30 minuti)
+- Attenzione discreta (15-20 minuti)
+- Attenzione molto breve (5-10 minuti)
+- Attenzione labile o assente (meno di 5 minuti)
+- Altro:
+
+### Attenzione Selettiva e Inibizione
+- Filtra i distrattori e resiste agli impulsi irrilevanti
+- Buona focalizzazione, ignora stimoli marginali
+- Si distrae in presenza di forti stimoli ambientali
+- Impulsività attentiva: risponde a stimoli errati prima di riflettere
+- Impossibilità di selezione e controllo inibitorio
+- Altro:
+
+### Attenzione Sostenuta e Vigilanza
+- Mantiene l'allerta alta per tutta la durata dell'attività
+- Mantiene la concentrazione con brevi pause/sollecitazioni
+- La vigilanza cala sensibilmente dopo pochi minuti
+- Tendenza a estraniarsi o a mostrare estrema lentezza (sluggish tempo)
+- Impossibile mantenere l'aggancio sul compito
+- Altro:
+
+### Shift Attentivo (Flessibilità)
+- Passa rapidamente da un'attività all'altra senza perdere il focus
+- Si adatta ai cambi di consegna con un breve tempo di latenza
+- Fatica a interrompere un'attività per iniziarne una nuova
+- Resta "ancorato" al compito precedente (perseverazione)
+- Confusione totale nel cambio di setting o attività
+- Altro:
+
+### Attenzione Divisa e Memoria di Lavoro
+- Gestisce compiti multipli (es. ascolta e prende appunti)
+- Gestisce compiti semplici simultanei
+- Necessita di eseguire un'azione alla volta (sequenzialità rigorosa)
+- Perde le istruzioni durante l'esecuzione del compito
+- Blocco cognitivo/saturazione con più di una richiesta
+- Altro:
+
+---
+
+## FUNZIONI ESECUTIVE
+_Valuta le funzioni cognitive superiori che regolano il comportamento finalizzato: pianificazione, controllo degli impulsi, memoria di lavoro, monitoraggio dell'azione e capacità di avviare un compito._
+
+### Pianificazione e organizzazione
+- Pianifica autonomamente e strategicamente
+- Organizza il lavoro con buona sequenzialità
+- Pianifica compiti semplici con qualche supporto
+- Pianificazione molto limitata, esecuzione caotica
+- Assenza di capacità di pianificazione
+- Altro:
+
+### Controllo inibitorio
+- Eccellente controllo degli impulsi
+- Buon controllo, riflette prima di agire
+- Discreto controllo in situazioni strutturate
+- Marcata impulsività cognitiva e comportamentale
+- Totale assenza di controllo inibitorio
+- Altro:
+
+### Memoria di lavoro (Working Memory)
+- Eccellente, gestisce informazioni complesse
+- Buona capacità di mantenere e manipolare informazioni
+- Discreta, gestisce 3-4 informazioni simultanee
+- Molto limitata, dimentica istruzioni in sequenza
+- Estremamente compromessa
+- Altro:
+
+### Monitoraggio metacognitivo
+- Monitora autonomamente il proprio lavoro, autocorregge
+- Riconosce errori e cerca di correggerli
+- Riconosce errori se segnalati
+- Non riconosce errori nemmeno se segnalati
+- Assenza di monitoraggio metacognitivo
+- Altro:
+
+### Avvio del compito (Iniziativa cognitiva)
+- Inizia autonomamente e prontamente
+- Inizia autonomamente dopo breve latenza
+- Necessita di sollecitazione verbale
+- Grande difficoltà nell'avvio, forte inerzia
+- Non inizia senza intervento diretto
+- Altro:
+
+---
+
+## MEMORIA
+_Analizza i diversi sistemi di memoria: memoria a breve termine (verbale e visuo-spaziale), memoria a lungo termine, memoria procedurale e l'uso di strategie di memorizzazione._
+
+### Memoria a breve termine verbale
+- Eccellente (ripete 7+ elementi)
+- Buona (ripete 5-6 elementi)
+- Discreta (ripete 3-4 elementi)
+- Molto limitata (ripete 1-2 elementi)
+- Estremamente compromessa
+- Altro:
+
+### Memoria a breve termine visuo-spaziale
+- Eccellente richiamo di informazioni visive
+- Buona capacità di memorizzare immagini e posizioni
+- Discreta memoria visiva
+- Molto limitata memoria visuo-spaziale
+- Estremamente compromessa
+- Altro:
+
+### Memoria a lungo termine
+- Eccellente consolidamento e richiamo
+- Buona memorizzazione a lungo termine
+- Discreta, ricorda con qualche difficoltà
+- Molto limitata, ritenzione scarsa
+- Grave compromissione della memoria a lungo termine
+- Altro:
+
+### Memoria procedurale
+- Apprende e mantiene procedure complesse
+- Buon apprendimento di routine e sequenze
+- Apprende procedure semplici con ripetizione
+- Necessita di ripasso continuo
+- Non consolida procedure
+- Altro:
+
+### Strategie di memorizzazione
+- Usa spontaneamente strategie efficaci (associazioni, mnemoniche)
+- Usa strategie se guidato
+- Usa strategie semplici (ripetizione)
+- Non sviluppa strategie di memorizzazione
+- Assenza di strategie
+- Altro:
+
+---
+
+## PERCEZIONE E PROCESSAMENTO SENSORIALE
+_Osserva l'efficienza dei sistemi percettivi (visivo e uditivo), l'integrazione visuo-motoria e la velocità di processamento delle informazioni._
+
+### Percezione visiva
+- Eccellente discriminazione visiva
+- Buona percezione di forme, colori, dettagli
+- Discreta percezione, qualche difficoltà con dettagli
+- Marcate difficoltà percettive visive
+- Grave compromissione percettiva
+- Altro:
+
+### Percezione uditiva
+- Eccellente discriminazione uditiva
+- Buona percezione e discriminazione di suoni
+- Discreta percezione uditiva
+- Marcate difficoltà di percezione uditiva
+- Grave deficit percettivo uditivo
+- Altro:
+
+### Integrazione visuo-motoria
+- Eccellente coordinazione occhio-mano
+- Buona integrazione visuo-motoria
+- Discreta coordinazione
+- Marcata difficoltà di integrazione
+- Grave compromissione
+- Altro:
+
+### Processamento delle informazioni
+- Velocità di processamento superiore
+- Velocità adeguata alla fascia d'età
+- Velocità leggermente rallentata
+- Processamento molto lento
+- Estrema lentezza di processamento
+- Altro:
+
+---
+
+## PREREQUISITI COGNITIVI DEGLI APPRENDIMENTI
+_Valuta le abilità cognitive di base necessarie per avvicinarsi agli apprendimenti formali della letto-scrittura e del calcolo, come la consapevolezza fonologica e i concetti logico-matematici preliminari._
+
+### Prerequisiti della letto-scrittura
+- Piena padronanza di tutti i prerequisiti
+- Buoni prerequisiti (fonologici, visuo-percettivi)
+- Prerequisiti essenziali presenti
+- Molti prerequisiti carenti
+- Prerequisiti assenti o gravemente compromessi
+- Altro:
+
+### Prerequisiti del calcolo
+- Piena padronanza (seriazione, classificazione, corrispondenza)
+- Buoni prerequisiti logico-matematici
+- Prerequisiti essenziali presenti
+- Molti prerequisiti carenti
+- Prerequisiti assenti
+- Altro:
+
+---
+
+## LETTURA
+_Analizza in dettaglio le abilità di lettura: accuratezza nella decodifica, velocità/fluenza, comprensione del testo, strategie utilizzate e fattori che influenzano la performance (tipo di carattere, lunghezza del testo)._
+
+### Decodifica
+- Lettura fluente, accurata e veloce
+- Buona lettura, pochi errori
+- Lettura sillabica ma corretta
+- Lettura molto difficoltosa
+- Non ha acquisito la lettura
+- Altro:
+
+### Tipologia di errori in lettura
+- Nessun errore significativo
+- Errori occasionali di autocorrezione
+- Sostituzioni di lettere simili (b/d, p/q, m/n)
+- Omissioni di lettere o sillabe
+- Inversioni di lettere (il/li, al/la)
+- Aggiunte di lettere o sillabe
+- Difficoltà con digrammi e trigrammi (gn, gl, sc)
+- Difficoltà con doppie
+- Salti di riga o parola
+- Errori misti multipli
+- Altro:
+
+### Correttezza
+- Nessun errore o errori rarissimi
+- Pochi errori di decodifica (1-2 ogni 100 parole)
+- Alcuni errori (3-5 ogni 100 parole)
+- Errori molto frequenti (oltre 10 ogni 100 parole)
+- Lettura totalmente scorretta
+- Altro:
+
+### Velocità (fluenza)
+- Velocità superiore alla norma (oltre 3 sillabe/secondo)
+- Velocità adeguata alla classe (2-3 sillabe/secondo)
+- Velocità leggermente inferiore (1,5-2 sillabe/secondo)
+- Lettura molto lenta (0,5-1 sillaba/secondo)
+- Velocità estremamente ridotta (sotto 0,5 sillabe/secondo)
+- Altro:
+
+### Modalità di lettura
+- Lettura globale e anticipatoria
+- Lettura per unità di senso (gruppi di parole)
+- Lettura parola per parola
+- Lettura per singole lettera (compitazione)
+- Non decodifica
+- Altro:
+
+### Comprensione del testo
+- Eccellente comprensione, inferenze complesse
+- Buona comprensione globale e analitica
+- Comprende il senso generale
+- Comprensione molto limitata
+- Non comprende ciò che legge
+- Altro:
+
+### Effetto della lunghezza del testo
+- Mantiene efficienza su testi lunghi
+- Lieve calo su testi lunghi
+- Affaticamento evidente su testi lunghi
+- Gestisce solo frasi singole
+- Difficoltà anche con frasi brevi
+- Altro:
+
+### Strategie di lettura
+- Usa strategie efficaci (anticipazione, autocorrezione)
+- Utilizza alcune strategie compensative
+- Rilegge spontaneamente in caso di errore
+- Non utilizza strategie
+- Lettura esclusivamente meccanica
+- Altro:
+
+### Lettura di diversi caratteri
+- Legge fluentemente tutti i caratteri
+- Preferenza per stampatello maiuscolo ma legge tutti
+- Legge solo stampatello maiuscolo
+- Gravi difficoltà con caratteri diversi
+- Non discrimina caratteri diversi
+- Altro:
+
+---
+
+## SCRITTURA
+_Valuta tutti gli aspetti della produzione scritta: grafia e motricità fine, organizzazione spaziale, competenza ortografica (errori fonologici e non), velocità, produzione e pianificazione testuale, nonché abilità di copia e dettato._
+
+### Grafia
+- Grafia fluida, leggibile e curata
+- Buona grafia, comprensibile
+- Grafia accettabile ma faticosa
+- Grafia molto disorganizzata
+- Grafia illeggibile o assente
+- Altro:
+
+### Pressione e impugnatura
+- Impugnatura corretta, pressione adeguata
+- Impugnatura funzionale, lieve tensione
+- Impugnatura scorretta ma funzionale
+- Impugnatura disfunzionale, affaticamento rapido
+- Grave difficoltà nell'impugnatura
+- Altro:
+
+### Organizzazione spaziale del testo
+- Eccellente uso dello spazio, rispetta margini e righe
+- Buona organizzazione dello spazio grafico
+- Organizzazione accettabile
+- Marcata disorganizzazione spaziale
+- Totale disorganizzazione
+- Altro:
+
+### Ortografia - Errori fonologici
+- Nessun errore fonologico
+- Rarissimi errori fonologici
+- Scambi di suoni simili (f/v, t/d, p/b)
+- Inversioni (li/il, ni/in)
+- Errori fonologici frequenti e persistenti
+- Altro:
+
+### Ortografia - Errori non fonologici
+- Nessun errore ortografico
+- Pochi errori (doppie, h, accenti)
+- Errori frequenti con doppie
+- Errori con digrammi/trigrammi (gn, gl, sc, qu)
+- Errori con h verbo avere
+- Errori con apostrofi e accenti
+- Separazioni illegali (in-sieme, l'avoro)
+- Fusioni illegali (lacqua, nonmipiace)
+- Errori ortografici pervasivi
+- Altro:
+
+### Velocità di scrittura
+- Velocità adeguata e sostenuta
+- Velocità adeguata ma con affaticamento
+- Scrittura lenta
+- Estrema lentezza esecutiva
+- Scrittura estremamente faticosa e lentissima
+- Altro:
+
+### Produzione di testi
+- Produce testi complessi, ben strutturati e creativi
+- Produce testi coerenti e coesi
+- Produce testi semplici ma comprensibili
+- Produzione molto limitata
+- Non produce testi autonomamente
+- Altro:
+
+### Ideazione e pianificazione testuale
+- Pianifica e organizza testi complessi autonomamente
+- Organizza testi con scaletta o schema
+- Scrive in modo lineare senza pianificazione
+- Idee frammentarie e disorganizzate
+- Non è in grado di organizzare un testo
+- Altro:
+
+### Coerenza e coesione testuale
+- Testi coerenti con ottimi connettivi
+- Buona coerenza e uso appropriato di connettivi
+- Coerenza globale, connettivi semplici
+- Testi poco coesi e poco coerenti
+- Assenza di coerenza testuale
+- Altro:
+
+### Revisione del testo
+- Rilegge e autocorregge autonomamente
+- Rilegge e corregge alcuni errori
+- Rilegge se sollecitato
+- Non riconosce errori nemmeno rileggendo
+- Assenza di capacità di revisione
+- Altro:
+
+### Copia da modello
+- Copia velocemente e correttamente
+- Copia correttamente con tempi adeguati
+- Copia lentamente ma correttamente
+- Copia molto difficoltosa
+- Non è in grado di copiare
+- Altro:
+
+### Dettato
+- Dettato accurato e veloce
+- Dettato corretto con velocità adeguata
+- Dettato con alcuni errori
+- Dettato molto difficoltoso
+- Non riesce a scrivere sotto dettatura
+- Altro:
+
+---
+
+## CALCOLO E COMPETENZE MATEMATICHE
+_Osserva le abilità matematiche di base: conoscenza numerica, calcolo mentale e scritto, risoluzione di problemi, ragionamento logico-matematico e comprensione del testo del problema._
+
+### Conoscenza numerica
+- Eccellente padronanza del sistema numerico
+- Buona conoscenza dei numeri
+- Conoscenza numerica essenziale
+- Conoscenza molto limitata
+- Non ha acquisito il concetto di numero
+- Altro:
+
+### Calcolo mentale
+- Calcola mentalmente con rapidità e precisione
+- Buone capacità di calcolo mentale
+- Calcola mentalmente operazioni semplici
+- Calcolo mentale molto limitato
+- Non esegue calcoli mentali
+- Altro:
+
+### Calcolo scritto
+- Esegue correttamente algoritmi complessi
+- Esegue correttamente le quattro operazioni
+- Esegue operazioni semplici con qualche errore
+- Esecuzione molto difficoltosa
+- Non esegue calcoli scritti
+- Altro:
+
+### Risoluzione di problemi matematici
+- Risolve problemi complessi autonomamente
+- Risolve problemi a più passaggi
+- Risolve problemi semplici
+- Grande difficoltà nella risoluzione
+- Non risolve problemi
+- Altro:
+
+### Ragionamento logico-matematico
+- Eccellente ragionamento, trova strategie alternative
+- Buon ragionamento logico
+- Ragionamento elementare
+- Ragionamento molto compromesso
+- Assenza di ragionamento matematico
+- Altro:
+
+### Comprensione del testo del problema
+- Comprende ed estrapola dati autonomamente
+- Buona comprensione della consegna
+- Comprende con supporto
+- Non comprende il testo del problema
+- Necessita di mediazione completa
+- Altro:
+
+---
+
+## STORIA
+_Valuta le competenze specifiche dell'area storica: comprensione dei concetti temporali, uso di strumenti temporali, riconoscimento di relazioni causa-effetto, collocazione di eventi, analisi delle fonti e padronanza del lessico disciplinare._
+
+### Concetti temporali di base
+- Piena padronanza di tutti i concetti temporali
+- Buona comprensione di successione, contemporaneità, durata
+- Comprende concetti temporali semplici (prima/dopo, ieri/oggi/domani)
+- Confonde i concetti temporali
+- Non comprende i concetti temporali
+- Altro:
+
+### Uso di strumenti temporali
+- Usa autonomamente linea del tempo, calendari, periodizzazioni
+- Usa strumenti temporali con buona competenza
+- Usa strumenti temporali semplici con supporto
+- Usa strumenti temporali solo con guida continua
+- Non è in grado di usare strumenti temporali
+- Altro:
+
+### Comprensione causa-effetto
+- Riconosce autonomamente relazioni causali complesse
+- Comprende relazioni di causa-effetto tra eventi
+- Comprende relazioni semplici e dirette
+- Non riconosce relazioni causa-effetto
+- Nessuna comprensione dei nessi causali
+- Altro:
+
+### Collocazione temporale di eventi
+- Colloca autonomamente eventi in epoche e periodi storici
+- Buona collocazione temporale di eventi studiati
+- Colloca eventi con supporto di schemi temporali
+- Confonde epoche e periodi storici
+- Non colloca eventi nel tempo
+- Altro:
+
+### Comprensione e uso delle fonti
+- Analizza e interpreta autonomamente fonti storiche
+- Comprende diversi tipi di fonti (materiali, scritte, iconografiche)
+- Riconosce fonti semplici con guida
+- Non distingue tipi di fonti
+- Non comprende il concetto di fonte storica
+- Altro:
+
+### Lessico specifico storico
+- Usa correttamente e autonomamente terminologia storica specifica
+- Buon uso del lessico storico
+- Comprende termini specifici ma li usa raramente
+- Non usa lessico specifico
+- Non comprende terminologia storica
+- Altro:
+
+### Esposizione di contenuti storici
+- Espone contenuti storici in modo organico e consequenziale
+- Espone fatti storici in modo ordinato
+- Espone con supporto di schemi o linee del tempo
+- Grande difficoltà nell'esporre contenuti storici
+- Non espone contenuti storici
+- Altro:
+
+---
+
+## GEOGRAFIA
+_Valuta le competenze specifiche dell'area geografica: orientamento, lettura e interpretazione di carte, uso di scale e legende, rappresentazione spaziale, comprensione di concetti geografici, relazioni uomo-ambiente e lettura di dati._
+
+### Orientamento e punti cardinali
+- Si orienta autonomamente usando punti cardinali
+- Buona conoscenza e uso di punti cardinali
+- Conosce i punti cardinali con qualche incertezza
+- Confonde i punti cardinali
+- Non conosce i punti cardinali
+- Altro:
+
+### Lettura di carte geografiche
+- Legge e interpreta autonomamente carte di diverso tipo
+- Legge carte geografiche con buona competenza
+- Legge carte semplici con supporto
+- Legge carte solo con guida continua
+- Non è in grado di leggere carte geografiche
+- Altro:
+
+### Uso di scale e legende
+- Comprende e usa autonomamente scale e legende
+- Buona comprensione di scale e simboli cartografici
+- Comprende scale e legende con spiegazione
+- Non comprende il concetto di scala
+- Non usa scale e legende
+- Altro:
+
+### Rappresentazione spaziale
+- Rappresenta autonomamente spazi con mappe e piantine
+- Disegna mappe e percorsi in modo appropriato
+- Rappresenta spazi semplici con supporto
+- Rappresentazioni spaziali molto confuse
+- Non rappresenta lo spazio graficamente
+- Altro:
+
+### Concetti geografici (paesaggio, territorio, ambiente)
+- Piena comprensione di concetti geografici complessi
+- Buona comprensione di concetti geografici fondamentali
+- Comprende concetti geografici essenziali
+- Difficoltà con concetti geografici astratti
+- Non comprende concetti geografici
+- Altro:
+
+### Relazioni uomo-ambiente
+- Comprende autonomamente interazioni complesse uomo-ambiente
+- Riconosce relazioni tra attività umane e territorio
+- Comprende relazioni semplici con esempi concreti
+- Non riconosce relazioni tra uomo e territorio
+- Nessuna comprensione delle relazioni ambientali
+- Altro:
+
+### Lessico geografico specifico
+- Usa correttamente terminologia geografica specifica
+- Buon uso del lessico geografico
+- Comprende termini specifici ma li usa raramente
+- Non usa lessico specifico
+- Non comprende terminologia geografica
+- Altro:
+
+### Lettura e interpretazione di dati (grafici, tabelle, diagrammi)
+- Legge e interpreta autonomamente grafici complessi
+- Buona lettura di grafici, tabelle e diagrammi
+- Legge dati semplici con supporto
+- Legge dati solo con guida continua
+- Non è in grado di leggere grafici e tabelle
+- Altro:
+
+---
+
+## AREA ARTISTICO-ESPRESSIVA
+_Osserva le competenze nelle discipline artistiche ed espressive: percezione visiva, produzione grafico-pittorica, uso di tecniche e strumenti, lettura di immagini, creatività e competenze musicali di base._
+
+### Percezione e discriminazione visiva artistica
+- Riconosce e discrimina forme, colori, linee con precisione
+- Buona percezione di elementi visivi
+- Discriminazione visiva essenziale
+- Marcate difficoltà percettive visive
+- Grave compromissione percettiva
+- Altro:
+
+### Produzione grafico-pittorica
+- Produce elaborati creativi e ricchi di dettagli
+- Buone capacità espressive e tecniche
+- Produzione essenziale ma appropriata
+- Produzione molto limitata
+- Non produce elaborati autonomamente
+- Altro:
+
+### Uso di strumenti e tecniche artistiche
+- Usa autonomamente e creativamente diversi strumenti e tecniche
+- Usa correttamente strumenti base (matite, pennarelli, tempere)
+- Usa strumenti semplici con qualche difficoltà
+- Necessita di supporto nell'uso degli strumenti
+- Non è in grado di usare strumenti artistici
+- Altro:
+
+### Comprensione e lettura di immagini
+- Analizza e interpreta immagini in modo approfondito
+- Legge e comprende elementi significativi delle immagini
+- Comprende il contenuto principale di un'immagine
+- Difficoltà nell'interpretazione di immagini
+- Non comprende immagini
+- Altro:
+
+### Creatività e originalità
+- Molto creativo, elaborati originali e personali
+- Buona creatività e personalizzazione
+- Creatività presente in alcune produzioni
+- Scarsa originalità
+- Assenza di creatività
+- Altro:
+
+### Competenze musicali di base
+- Riconosce e riproduce ritmi e melodie con precisione
+- Buone capacità di ascolto e riproduzione musicale
+- Riproduce ritmi e melodie semplici
+- Marcate difficoltà musicali
+- Non riproduce ritmi o melodie
+- Altro:
+
+---
+
+## AREA MOTORIA E PSICOMOTORIA
+_Valuta le abilità motorie globali e fini, la coordinazione, l'equilibrio, la consapevolezza corporea, la lateralizzazione, l'organizzazione spazio-temporale in movimento, le prassie e la partecipazione ad attività motorie e sportive._
+
+### Motricità globale
+- Eccellente coordinazione motoria globale
+- Buona coordinazione dei movimenti
+- Coordinazione motoria essenziale
+- Marcate difficoltà motorie
+- Grave compromissione motoria
+- Altro:
+
+### Motricità fine
+- Eccellente precisione nei movimenti fini
+- Buona coordinazione fine (scrittura, ritaglio, manipolazione)
+- Coordinazione fine accettabile
+- Marcate difficoltà (disprassia fine)
+- Grave compromissione motoria fine
+- Altro:
+
+### Coordinazione oculo-manuale
+- Eccellente coordinazione occhio-mano
+- Buona coordinazione in attività di precisione
+- Coordinazione sufficiente
+- Marcate difficoltà
+- Grave deficit di coordinazione
+- Altro:
+
+### Equilibrio e controllo posturale
+- Eccellente equilibrio statico e dinamico
+- Buon controllo posturale
+- Equilibrio essenziale
+- Marcate difficoltà posturali
+- Grave compromissione dell'equilibrio
+- Altro:
+
+### Orientamento corporeo e schema corporeo
+- Piena consapevolezza del proprio corpo e delle sue parti
+- Buona conoscenza dello schema corporeo
+- Conoscenza essenziale del corpo
+- Scarsa consapevolezza corporea
+- Assenza di schema corporeo
+- Altro:
+
+### Lateralizzazione
+- Lateralità ben definita e funzionale (dx/sx)
+- Lateralità definita con qualche incertezza
+- Lateralità in via di definizione
+- Lateralità crociata con difficoltà operative
+- Mancinismo contrariato o ambidestrismo problematico
+- Altro:
+
+### Organizzazione spazio-temporale in movimento
+- Organizza perfettamente movimenti nello spazio e nel tempo
+- Buona organizzazione spazio-temporale motoria
+- Organizzazione motoria essenziale
+- Marcata disorganizzazione motoria
+- Grave compromissione
+- Altro:
+
+### Prassie (abilità gestuali e imitative)
+- Eccellenti abilità prassiche, imitazione precisa
+- Buone abilità gestuali e imitative
+- Abilità prassiche essenziali
+- Disprassia moderata
+- Disprassia grave
+- Altro:
+
+### Partecipazione a giochi motori e attività sportive
+- Partecipa attivamente e con entusiasmo
+- Buona partecipazione alle attività motorie
+- Partecipa con qualche difficoltà
+- Evita attività motorie
+- Rifiuto delle attività motorie
+- Altro:
+
+### Rispetto di regole in giochi e sport
+- Rispetta autonomamente tutte le regole
+- Buona comprensione e rispetto delle regole
+- Rispetta regole semplici
+- Non rispetta le regole
+- Non comprende le regole di gioco
+- Altro:
+
+---
+
+## STRATEGIE DI APPRENDIMENTO
+_Analizza lo stile cognitivo prevalente, l'approccio al compito, l'uso di strategie di studio, la capacità di generalizzare gli apprendimenti e di integrare competenze diverse._
+
+### Stile cognitivo prevalente
+- Stile analitico-sequenziale
+- Stile globale-sintetico
+- Stile visivo-verbale
+- Stile uditivo-verbale
+- Stile cinestetico-operativo
+- Altro:
+
+### Modalità di approccio al compito
+- Approccio riflessivo, pianificato
+- Approccio sistematico
+- Approccio per prove ed errori
+- Approccio caotico
+- Assenza di strategia
+- Altro:
+
+### Uso di strategie di studio
+- Usa autonomamente strategie complesse (schemi, mappe)
+- Usa strategie se guidato (sottolineature, riassunti)
+- Usa strategie molto semplici
+- Studio inefficace
+- Non ha sviluppato metodo di studio
+- Altro:
+
+### Generalizzazione degli apprendimenti
+- Generalizza e trasferisce conoscenze autonomamente
+- Generalizza in contesti simili
+- Generalizza con mediazione
+- Apprendimenti settoriali, non generalizza
+- Totale assenza di generalizzazione
+- Altro:
+
+### Integrazione di competenze diverse
+- Integra efficacemente competenze multidisciplinari
+- Collega conoscenze di ambiti diversi
+- Integra competenze con supporto
+- Competenze frammentate
+- Totale frammentazione
+- Altro:
+
+---
+
+## AREA DEL SÉ, MOTIVAZIONE E ATTEGGIAMENTO VERSO L’APPRENDIMENTO
+_Esplora la percezione di sé dell’alunno, il senso di autoefficacia, l’autostima, la motivazione (intrinseca ed estrinseca), l’atteggiamento verso il compito, la tolleranza alla frustrazione e la consapevolezza delle proprie difficoltà._
+
+### Autostima generale
+- Elevata autostima, si percepisce positivamente in tutti i contesti (familiare, scolastico, sociale)
+- Buona autostima generale, si valuta positivamente nella maggior parte delle situazioni
+- Autostima variabile a seconda del contesto (positiva a casa, incerta a scuola o viceversa)
+- Bassa autostima, si percepisce inadeguato e poco capace
+- Autostima molto bassa, sentimenti pervasivi di inadeguatezza e scarso valore personale
+- Altro:
+
+### Senso di autoefficacia
+- Forte senso di autoefficacia, si sente capace di affrontare compiti e situazioni nuove
+- Buon senso di autoefficacia, fiducia nelle proprie capacità soprattutto in ambiti familiari
+- Autoefficacia variabile o specifica per alcuni ambiti
+- Senso di inadeguatezza, si sente incapace anche di fronte a compiti adeguati
+- Totale sfiducia nelle proprie capacità, rinuncia preventiva
+- Altro:
+
+### Stile di attribuzione e locus of control
+- Attribuzione bilanciata e flessibile (bi-locus), riconosce responsabilità personali e fattori esterni
+- Attribuzione prevalentemente interna, riconosce il proprio impegno
+- Attribuzione prevalentemente esterna, attribuisce eventi a fortuna, difficoltà o altri
+- Attribuzione esterna rigida, percezione di totale mancanza di controllo
+- Assenza di riflessione sulle cause di successi e insuccessi
+- Altro:
+
+### Motivazione all’apprendimento
+- Motivazione intrinseca elevata, apprende per curiosità e piacere personale
+- Buona motivazione, con interesse stabile
+- Motivazione selettiva o dipendente dall’ambito di interesse
+- Scarsa motivazione, partecipazione passiva
+- Assenza o rifiuto dell’apprendimento, disinteresse generalizzato
+- Altro:
+
+### Atteggiamento verso il compito
+- Positivo e propositivo, ricerca la sfida
+- Positivo e collaborativo
+- Neutro, esegue quanto richiesto
+- Oppositivo verso alcune attività
+- Rifiuto sistematico del compito
+- Altro:
+
+### Tolleranza alla frustrazione
+- Affronta le difficoltà con determinazione e perseveranza
+- Gestisce la frustrazione e tenta strategie alternative
+- Sopporta frustrazioni lievi
+- Si blocca di fronte alle difficoltà
+- Reazioni emotive eccessive, abbandono immediato
+- Altro:
+
+### Atteggiamento verso l’errore
+- Considera l’errore un’opportunità di apprendimento
+- Accetta l’errore e cerca di correggerlo
+- Disagio iniziale, supera l’errore con supporto
+- Blocco emotivo, vergogna o senso di colpa
+- Rifiuta l’errore, reagisce con rabbia o attribuzione della colpa ad altri
+- Altro:
+
+### Consapevolezza delle difficoltà cognitive (metacognizione)
+- Piena consapevolezza dei propri limiti, chiede aiuto in modo appropriato
+- Riconosce quando non comprende o incontra difficoltà
+- Consapevolezza parziale delle difficoltà
+- Non riconosce le difficoltà cognitive
+- Totale inconsapevolezza delle proprie difficoltà
+- Altro:
+
+---
+
+## RISPOSTA AGLI INTERVENTI DIDATTICI
+_Osserva l'efficacia degli interventi didattici personalizzati: risposta alla mediazione, alle facilitazioni, all'uso di strumenti compensativi e alle misure dispensative._
+
+### Apprendimento con mediazione
+- Apprende rapidamente con minimo supporto
+- Apprende bene con mediazione didattica
+- Apprende con mediazione intensiva
+- Apprendimento molto lento
+- Assenza di progressi anche con mediazione
+- Altro:
+
+### Risposta a facilitazioni e semplificazioni
+- Non necessita di facilitazioni
+- Beneficia di facilitazioni occasionali
+- Necessita di facilitazioni regolari
+- Necessita di personalizzazione completa
+- Anche con massime facilitazioni, progressi minimi
+- Altro:
+
+### Uso di strumenti compensativi
+- Non necessita di strumenti compensativi
+- Usa strumenti compensativi efficacemente
+- Usa strumenti con supporto
+- Non utilizza strumenti compensativi
+- Rifiuta strumenti compensativi
+- Altro:
+
+### Beneficio da misure dispensative
+- Non necessita di misure dispensative
+- Beneficia di alcune dispensazioni
+- Necessita di dispensazioni regolari
+- Necessita di esonero da alcune attività
+- Programmazione differenziata necessaria
+- Altro:
+
+---
+
+## BISOGNI EDUCATIVI EMERSI
+_Sintetizza gli ambiti prioritari per il potenziamento, la necessità di supporti specialistici e gli strumenti o ausili didattici necessari._
+
+### Ambiti di potenziamento prioritari
+- Nessun bisogno particolare
+- Potenziamento attenzione e concentrazione
+- Potenziamento memoria
+- Potenziamento funzioni esecutive
+- Potenziamento competenze linguistiche
+- Potenziamento competenze logico-matematiche
+- Potenziamento autonomia
+- Sviluppo metodo di studio
+- Potenziamento motivazione
+- Altro:
+
+### Necessità di supporto specialistico
+- Nessun supporto necessario
+- Logopedia
+- Psicomotricità/Neuropsicomotricità
+- Supporto psicologico o terapia occupazionale
+- Intervento educativo specialistico o valutazione neuropsichiatrica
+- Altro:
+
+### Strumenti e ausili necessari
+- Nessuno strumento particolare
+- Strumenti compensativi tecnologici
+- Strumenti compensativi non tecnologici
+- Ausili specifici
+- Tecnologie assistive
+- Altro:
+
+---
+
+## EVOLUZIONE E PROGRESSI
+_Traccia l'andamento dello sviluppo cognitivo e degli apprendimenti nel tempo, individuando le aree di maggior progresso e quelle di criticità persistente._
+
+### Andamento nel tempo
+- Miglioramento significativo e costante
+- Miglioramento graduale
+- Situazione stabile
+- Peggioramento graduale
+- Situazione critica in peggioramento
+- Altro:
+
+### Aree di maggior progresso
+- Attenzione, concentrazione e funzioni esecutive
+- Memoria
+- Linguaggio e letto-scrittura
+- Competenze matematiche
+- Autonomia e motivazione
+- Altro:
+
+### Aree di maggiore criticità persistente
+- Attenzione, concentrazione e funzioni esecutive
+- Memoria
+- Linguaggio e letto-scrittura
+- Competenze matematiche
+- Autonomia e motivazione
+- Altro:
+
+---
+
+## OSSERVAZIONI
+
+### Osservazioni generali, punti di forza, difficoltà e indicazioni per il PEI:
+
+`;
